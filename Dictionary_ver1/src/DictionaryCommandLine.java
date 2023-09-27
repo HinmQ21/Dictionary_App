@@ -52,7 +52,8 @@ public class DictionaryCommandLine {
                     dictionaryManagement.searchWord();
                     break;
                 case 7:
-                    System.out.println("Game feature is not supported yet.");
+                    dictionaryManagement.init_dictionaryGame();
+                    dictionaryManagement.dictionaryGame();
                     break;
                 case 8:
                     dictionaryManagement.dictionaryImportFromFile();

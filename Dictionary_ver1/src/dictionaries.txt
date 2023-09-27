@@ -2,7 +2,7 @@ Computer	Máy tính: Một thiết bị điện tử để xử lý và lưu tr�
 Bicycle		Xe đạp: Phương tiện gắn với hai bánh xe mà người ta tự đạp để di chuyển.
 Television	Truyền hình: Một công cụ để xem hình ảnh và video trên màn hình.
 Book	Sách: Tập hợp các trang giấy in bìa được kết hợp để đọc hoặc học.
-Restauran	tNhà hàng: Nơi người ta đi ăn ngoài và thường có thực đơn để chọn món.
+Restauran	Nhà hàng: Nơi người ta đi ăn ngoài và thường có thực đơn để chọn món.
 Car	Ô tô: Phương tiện di chuyển có bốn bánh chạy bằng động cơ.
 Smartphone	Điện thoại thông minh: Điện thoại di động có khả năng truy cập internet và chạy các ứng dụng.
 Coffee	Cà phê: Đồ uống pha từ hạt cà phê rang và nước nóng.

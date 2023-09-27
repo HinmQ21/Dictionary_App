@@ -1,3 +1,7 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -5,23 +9,10 @@ public class DictionaryManagement {
     Scanner scanner = new Scanner(System.in);
 
     Dictionary dictionary ;
+
     public DictionaryManagement(Dictionary dictionary) {
         this.dictionary = dictionary;
     }
-
-//    public void insertFromCommandLine(Dictionary dictionary) {
-//        System.out.print("Enter the number of words: ");
-//        int n = scanner.nextInt();
-//        scanner.nextLine(); // Consume the newline character
-//        for (int i = 0; i < n; i++) {
-//            System.out.print("Enter word in English: ");
-//            String wordTarget = scanner.nextLine();
-//            System.out.print("Enter word in Vietnamese: ");
-//            String wordExplain = scanner.nextLine();
-//            Word word = new Word(wordTarget, wordExplain);
-//            dictionary.insertWord(word);
-//        }
-//    }
 
     public void addWord() {
         Scanner scanner = new Scanner(System.in);
@@ -103,6 +94,79 @@ public class DictionaryManagement {
         System.out.print("Enter the filename to export: ");
         String filename = scanner.nextLine();
         dictionary.exportToFile(filename);
+    }
+
+    class Questions {
+
+        public String[] getQues() {
+            return ques;
+        }
+
+        public void setQues(String[] ques) {
+            this.ques = ques;
+        }
+
+        private String[] ques;
+
+        public String getAns() {
+            return ans;
+        }
+
+        public void setAns(String ans) {
+            this.ans = ans;
+        }
+
+        private String ans;
+
+    }
+
+    List<Questions> questions;
+
+    public void init_dictionaryGame() {
+        questions = new ArrayList<>();
+        String filename = "src\\questions.txt";
+        try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] parts = line.split("   ");
+                if (parts.length == 6) {
+                    Questions que = new Questions();
+                    que.setAns(parts[5]);
+                    parts[5] = null;
+                    String [] ques_sec = {parts[0] ,parts[1], parts[2], parts[3], parts[4]};
+                    que.setQues(ques_sec);
+                    questions.add(que);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void dictionaryGame() {
+        while (true) {
+            for (int i = 0; i < questions.size(); i++) {
+                System.out.println("Question " + (i + 1) + ": ");
+                String[] que = questions.get(i).getQues();
+                for (String s : que) {
+                    System.out.println(s);
+                    }
+                System.out.println("Your choice [A/B/C/D]:");
+
+                String your_ans = new Scanner(System.in).nextLine();
+                if (your_ans.equals(questions.get(i).getAns())) {
+                    System.out.println("Correct!");
+                } else {
+                    System.out.println("Incorrect!");
+                    }
+                }
+            System.out.println("Do you want to play again ? [Y / N]");
+
+            String in = new Scanner(System.in).nextLine();
+            if(in.equals("N") || in.equals("n")) {
+                break;
+            }
+        }
     }
 }
 
