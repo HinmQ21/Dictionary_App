@@ -18,11 +18,14 @@ public class DictionaryManagement {
         try {
             Class.forName("org.sqlite.JDBC");
             con = DriverManager.getConnection(URL);
+            con.setAutoCommit(false);
             statement = con.createStatement();
             String sql = "SELECT COUNT(word) FROM " + table + " WHERE word = '" + word +"'";
             ResultSet res = statement.executeQuery(sql);
             cnt = res.getInt(1);
-
+            res.close();
+            statement.close();
+            con.close();
         }catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -59,13 +62,13 @@ public class DictionaryManagement {
         return list;
     }
 
-    public static void dbAdd(String word, String description, String pronounce, String table) {
+    public static void dbAdd(String word, String pronounce, String description, String table) {
         Connection con = null;
         Statement statement = null;
         try {
             Class.forName("org.sqlite.JDBC");
             con = DriverManager.getConnection(URL);
-            con.setAutoCommit(false);
+            //con.setAutoCommit(false);
             statement = con.createStatement();
 
             String sql = "INSERT INTO " + table + " (word, pronounce, description) values ('" + word + "', '"
@@ -77,6 +80,18 @@ public class DictionaryManagement {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+    }
+
+    public static void dbDelete(String word, String table) {
+
+    }
+
+    public static void dbUpdate(String word, String new_def, String table) {
+
+    }
+
+    public static void textToSpeech(String text, String language) {
+
     }
 
 }

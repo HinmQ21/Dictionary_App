@@ -14,7 +14,7 @@ public class HomeController implements Initializable {
     private AnchorPane container;
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        showComponent("/fxml/Search.fxml");
+        //showComponent("/fxml/Search.fxml");
     }
     private void showComponent(String path) {
         try {

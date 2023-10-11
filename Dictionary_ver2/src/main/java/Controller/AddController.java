@@ -29,7 +29,11 @@ public class AddController {
 
         } else {
             DictionaryManagement.dbAdd(word, pronounce, def, "av");
+            System.out.println(word + " " + def + " " + pronounce);
             System.out.println("Add successfully");
         }
+        wordField.clear();
+        pronounceField.clear();
+        defArea.clear();
     }
 }
