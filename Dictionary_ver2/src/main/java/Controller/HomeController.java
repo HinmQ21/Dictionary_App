@@ -33,4 +33,16 @@ public class HomeController implements Initializable {
     public void onActionAdd() {
         showComponent("/fxml/Add.fxml");
     }
+
+    public void onActionTranslate() {
+        showComponent("/fxml/Translate.fxml");
+    }
+
+    public void onActionGrammar() {
+        showComponent("/fxml/Grammar.fxml");
+    }
+
+    public void onActionGame() {
+        showComponent("/fxml/Game.fxml");
+    }
 }
