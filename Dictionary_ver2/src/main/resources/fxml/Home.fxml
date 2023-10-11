@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="535.0" prefWidth="715.0" style="-fx-background-color: #90EE90;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.HomeController">
+   <children>
+      <ToggleButton onAction="#onActionAdd" layoutX="14.0" layoutY="163.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="104.0" text="            ADD" />
+      <AnchorPane fx:id="container" layoutX="121.0" layoutY="13.0" prefHeight="526.0" prefWidth="581.0" />
+      <ImageView fitHeight="40.0" fitWidth="54.0" layoutX="25.0" layoutY="166.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/add.png" />
+         </image>
+      </ImageView>
+      <ToggleButton layoutX="10.0" layoutY="64.0" mnemonicParsing="false" onAction="#onActionSearch" prefHeight="46.0" prefWidth="104.0" text="       SEARCH" />
+      <ImageView fitHeight="37.0" fitWidth="77.0" layoutX="14.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/search.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
