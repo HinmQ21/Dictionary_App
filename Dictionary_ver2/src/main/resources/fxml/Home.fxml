@@ -1,15 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <BorderPane fx:id="container" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="558.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.HomeController">
    <left>
-      <VBox prefHeight="535.0" prefWidth="141.0" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" prefHeight="558.0" prefWidth="118.0" styleClass="root" stylesheets="@../Ultis/value/styles.css" BorderPane.alignment="CENTER">
          <children>
-            <ToggleButton mnemonicParsing="false" onAction="#onActionAdd" prefHeight="38.0" prefWidth="112.0" text="ADD" />
-            <ToggleButton layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onActionSearch" prefHeight="38.0" prefWidth="112.0" text="SEARCH" />
+            <ToggleButton alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#onActionSearch" prefHeight="55.0" prefWidth="120.0" styleClass="transparent" stylesheets="@../Ultis/value/styles.css" text="SEARCH">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Ultis/icon/icons8-search-64.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font></ToggleButton>
+            <ToggleButton alignment="CENTER_LEFT" layoutX="10.0" layoutY="264.0" mnemonicParsing="false" onAction="#onActionAdd" prefHeight="55.0" prefWidth="120.0" styleClass="transparent" stylesheets="@../Ultis/value/styles.css" text="ADD">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Ultis/icon/icons8-add-64%20(3).png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton alignment="CENTER_LEFT" layoutX="10.0" layoutY="289.0" mnemonicParsing="false" onAction="#onActionTranslate" prefHeight="55.0" prefWidth="120.0" styleClass="transparent" stylesheets="@../Ultis/value/styles.css" text="TRANSLATE">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Ultis/icon/icons8-translate-50.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton alignment="CENTER_LEFT" layoutX="10.0" layoutY="315.0" mnemonicParsing="false" onAction="#onActionGrammar" prefHeight="55.0" prefWidth="120.0" styleClass="transparent" stylesheets="@../Ultis/value/styles.css" text="GRAMMAR">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Ultis/icon/icons8-grammar-50.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton alignment="CENTER_LEFT" layoutX="10.0" layoutY="340.0" mnemonicParsing="false" onAction="#onActionGame" prefHeight="55.0" prefWidth="120.0" styleClass="transparent" stylesheets="@../Ultis/value/styles.css" text="GAME">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Ultis/icon/icons8-game-80.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+            </ToggleButton>
          </children>
       </VBox>
    </left>
