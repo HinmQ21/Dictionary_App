@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="558.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AddController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="558.0" prefWidth="787.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AddController">
 <center>
    <VBox prefHeight="558.0" prefWidth="900.0" stylesheets="@../Ultis/value/styles.css" BorderPane.alignment="CENTER">
       <children>
@@ -53,7 +53,7 @@
                </ImageView>
             </children>
          </HBox>
-         <HBox alignment="CENTER" prefHeight="446.0" prefWidth="900.0">
+         <HBox alignment="CENTER" prefHeight="558.0" prefWidth="787.0">
             <children>
                <VBox prefHeight="431.0" prefWidth="493.0">
                   <children>
@@ -117,7 +117,7 @@
                         <children>
                            <ImageView fitHeight="38.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                               <image>
-                                 <Image url="@../Ultis/icon/icons8-explain-64%20.png" />
+                                 <Image url="@../Ultis/icon/explain.png" />
                               </image>
                            </ImageView>
                            <Label prefHeight="38.0" prefWidth="104.0" text="Nghĩa của từ" textFill="#82a0d8">
@@ -144,4 +144,3 @@
    </VBox>
 </center>
 </BorderPane>
-
