@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SearchController">
+   <children>
+      <ListView fx:id="listWord" layoutX="26.0" layoutY="79.0" prefHeight="306.0" prefWidth="226.0" />
+      <TextField fx:id="searchField" layoutX="26.0" layoutY="40.0" prefHeight="26.0" prefWidth="226.0" />
+      <TextArea fx:id="definitionArea" layoutX="285.0" layoutY="40.0" prefHeight="347.0" prefWidth="302.0" />
+   </children>
+</AnchorPane>

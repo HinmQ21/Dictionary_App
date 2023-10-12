@@ -3,12 +3,16 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SearchController">
-   <children>
-      <ListView fx:id="listWord" layoutX="26.0" layoutY="79.0" prefHeight="306.0" prefWidth="226.0" />
-      <TextField fx:id="searchField" layoutX="26.0" layoutY="40.0" prefHeight="26.0" prefWidth="226.0" />
-      <TextArea fx:id="definitionArea" layoutX="285.0" layoutY="40.0" prefHeight="347.0" prefWidth="302.0" />
-   </children>
-</AnchorPane>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="558.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SearchController">
+   <left>
+      <ListView fx:id="listWord" prefHeight="374.0" prefWidth="196.0" BorderPane.alignment="CENTER" />
+   </left>
+   <top>
+      <TextField fx:id="searchField" prefHeight="74.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
+   </top>
+   <center>
+      <TextArea fx:id="definitionArea" prefHeight="299.0" prefWidth="404.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>

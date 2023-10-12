@@ -1,0 +1,91 @@
+.primary-background{
+    -fx-background-color: #F67F00;
+}
+
+.secondary-background{
+    -fx-background-color: #F8F9F6;
+}
+
+.white-background{
+    -fx-background-color: #fff;
+}
+
+.transparent{
+    -fx-background-color: rgba(0,0,0,0);
+}
+
+.right-background{
+    -fx-background-color: #fff;
+    -fx-border-style: hidden solid hidden hidden;
+}
+
+.top-background{
+    -fx-background-color: #fff;
+    -fx-border-style: hidden hidden solid hidden;
+}
+
+.add_top-background{
+        -fx-background-color: #82A0D8;
+}
+
+.add-background{
+    -fx-background-color: #E4ECEF;
+}
+
+.input{
+    -fx-text-fill: #191717;
+    -fx-border-color: #82A0D8;
+    -fx-font-size: 14px;
+    -fx-border-width: 1.5;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+}
+
+.add-button{
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 0, 0);
+    -fx-text-fill: #fff;
+    -fx-background-radius: 5px;
+    -fx-font-size: 13px;
+    -fx-font-weight: 700;
+    -fx-background-color: linear-gradient(to bottom left, #82A0D8, #82A0D8);
+    -fx-pref-width: 90px;
+    -fx-pref-height: 35px;
+}
+
+.title{
+     -fx-background-color: #82A0D8;
+     -fx-effect: dropshadow(three-pass-box, #8c7ae6, 10, 0, 0, 0);
+     -fx-background-radius: 5;
+     -fx-border-radius: 5;
+}
+
+.left_main{
+     -fx-background-color: #9EDDFF;
+}
+
+.definition-wrapper{
+    -fx-border-width: 1.5;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-background-color: white;
+    -fx-effect: dropshadow(three-pass-box, #4f2258, 4, 0, 0, 1.5) ;
+}
+
+.explanation-field{
+    -fx-background-color: transparent;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-border-width: 0;
+    -fx-text-fill: #191717;
+    -fx-font-size: 16px;
+}
+
+.all_button{
+    -fx-padding:0;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-background-color: #f8f8f8;
+    -fx-border: none;
+    -fx-background-insets: 0;
+    -fx-effect: dropshadow(three-pass-box, #718093, 2, 0, 0, 1) ;
+}
