@@ -1,6 +1,7 @@
 package Controller;
 
 import DictionaryComandLine.DictionaryManagement;
+import DictionaryComandLine.Word;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -15,17 +16,17 @@ public class SearchController implements Initializable {
     private final String eng_vieTable = "av";
 
     @FXML
-    private TextField searchField;
+    private TextField searchField, pronounceField;
     @FXML
     private TextArea definitionArea;
     @FXML
-    private ListView<String> listWord;
+    private ListView<Word> listWord;
 
-    private ObservableList<String> list = FXCollections.observableArrayList();
+    private ObservableList<Word> list = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        list = DictionaryManagement.dbSearch(" ", eng_vieTable);
+        list = DictionaryManagement.dbSearch("'a%'", eng_vieTable);
         listWord.setItems(list);
     }
 
@@ -35,10 +36,12 @@ public class SearchController implements Initializable {
         listWord.setItems(list);
     }
 
-//    public void onMouseClickListView() {
-//        Word selectedWord = (Word) listWord.getSelectionModel().getSelectedItem();
-//        if (selectedWord != null) {
-//            definitionArea.setText(selectedWord.getWord_explain());
-//        }
-//    }
+    public void onMouseClickListView() {
+        Word selectedWord = listWord.getSelectionModel().getSelectedItem();
+        if (selectedWord != null) {
+            definitionArea.setText(selectedWord.getWord_explain());
+            pronounceField.setText(selectedWord.getWord_pronouce());
+            searchField.setText(selectedWord.getWord_target());
+        }
+    }
 }

@@ -13,6 +13,14 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.io.BufferedInputStream;
+import java.io.InputStream;
+
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 
 public class DictionaryManagement {
     private final static String URL = "jdbc:sqlite:./src/main/resources/data/dict_hh.db";
@@ -38,8 +46,8 @@ public class DictionaryManagement {
         return cnt != 0;
     }
 
-    public static ObservableList<String> dbSearch(String word_target, String table) {
-        ObservableList<String> list = FXCollections.observableArrayList();
+    public static ObservableList<Word> dbSearch(String word_target, String table) {
+        ObservableList<Word> list = FXCollections.observableArrayList();
         Connection con = null;
         Statement statement = null;
 
@@ -49,7 +57,7 @@ public class DictionaryManagement {
             con.setAutoCommit(false);
 
             statement = con.createStatement();
-            String sql_query = "SELECT * FROM " + table + "WHERE word LIKE " + word_target + " ORDER BY word";
+            String sql_query = "SELECT * FROM " + table + " WHERE word LIKE " + word_target + " ORDER BY word";
 
             ResultSet res = statement.executeQuery(sql_query);
             while(res.next()) {
@@ -57,7 +65,7 @@ public class DictionaryManagement {
                         res.getString("description"),
                         res.getString("pronounce")
                 );
-                list.add(word.getWord_target());
+                list.add(word);
             }
             res.close();
             statement.close();
@@ -74,7 +82,6 @@ public class DictionaryManagement {
         try {
             Class.forName("org.sqlite.JDBC");
             con = DriverManager.getConnection(URL);
-            //con.setAutoCommit(false);
             statement = con.createStatement();
 
             String sql = "INSERT INTO " + table + " (word, pronounce, description) values ('" + word + "', '"
@@ -89,15 +96,75 @@ public class DictionaryManagement {
     }
 
     public static void dbDelete(String word, String table) {
+        Connection con = null;
+        Statement statement = null;
+        try {
+            Class.forName("org.sqlite.JDBC");
+            con = DriverManager.getConnection(URL);
+            statement = con.createStatement();
 
+            String sql = "DELETE FROM " + table + " WHERE word = '" + word +"'";
+            statement.executeUpdate(sql);
+            statement.close();
+            con.close();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     public static void dbUpdate(String word, String new_def, String table) {
+        Connection con = null;
+        Statement statement = null;
+        try {
+            Class.forName("org.sqlite.JDBC");
+            con = DriverManager.getConnection(URL);
+            statement = con.createStatement();
 
+            String sql = "UPDATE " + table + " set description = '" +new_def
+                    + "' WHERE word = " + "'"+ word + "'";
+            statement.executeUpdate(sql);
+            statement.close();
+            con.close();
+        }catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
-    public static void textToSpeech(String text, String language) {
+    public static void TextToSpeech(String word, String language) {
+        String apiKey = "946fd1d2d4814f1c8b946cfa011ea466";
 
+        try {
+            String apiUrl = "http://api.voicerss.org/?";
+            String apiKeyParam = "key=" + URLEncoder.encode(apiKey, "UTF-8");
+            String textParam = "src=" + URLEncoder.encode(word, "UTF-8");
+            String langParam = language;
+
+            URL url = new URL(apiUrl + apiKeyParam + "&" + textParam + "&" + langParam);
+
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("GET");
+
+            int responseCode = conn.getResponseCode();
+
+            if (responseCode == 200) {
+                InputStream inputStream = conn.getInputStream();
+                BufferedInputStream bufferedInputStream = new BufferedInputStream(inputStream);
+
+                AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(bufferedInputStream);
+                Clip clip = AudioSystem.getClip();
+                clip.open(audioInputStream);
+                clip.start();
+
+                Thread.sleep(clip.getMicrosecondLength() / 500);
+
+                audioInputStream.close();
+                bufferedInputStream.close();
+                inputStream.close();
+            }
+
+        } catch (IOException | UnsupportedAudioFileException | LineUnavailableException | InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     public static String translate(String langFrom, String langTo, String text) throws IOException {
