@@ -9,12 +9,15 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URLEncoder;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.io.BufferedInputStream;
 import java.io.InputStream;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
@@ -24,6 +27,39 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 
 public class DictionaryManagement {
     private final static String URL = "jdbc:sqlite:./src/main/resources/data/dict_hh.db";
+
+    private static final Map<String, Word> data = new HashMap<String, Word>();
+
+    private static final String tableEV = "av";
+
+    public static Map<String, Word> getData() {
+        return data;
+    }
+
+    public static void readData () {
+        Connection con = null;
+        Statement statement = null;
+        try {
+            Class.forName("org.sqlite.JDBC");
+            con = DriverManager.getConnection(URL);
+            con.setAutoCommit(false);
+            statement = con.createStatement();
+
+            String sql_query = "SELECT * FROM " + tableEV + " ORDER BY word";
+            ResultSet res = statement.executeQuery(sql_query);
+            while(res.next()) {
+                Word word = new Word(res.getString("word"),
+                        res.getString("html")
+                );
+                data.put(word.getWord_target(), word);
+            }
+
+            statement.close();
+            con.close();
+        }catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
 
     public static boolean dbHasWord(String word, String table) {
         Connection con = null;
@@ -46,8 +82,8 @@ public class DictionaryManagement {
         return cnt != 0;
     }
 
-    public static ObservableList<Word> dbSearch(String word_target, String table) {
-        ObservableList<Word> list = FXCollections.observableArrayList();
+    public static ObservableList<String> dbSearch(String word_target, String table) {
+        ObservableList<String> list = FXCollections.observableArrayList();
         Connection con = null;
         Statement statement = null;
 
@@ -62,10 +98,9 @@ public class DictionaryManagement {
             ResultSet res = statement.executeQuery(sql_query);
             while(res.next()) {
                 Word word = new Word(res.getString("word"),
-                        res.getString("description"),
-                        res.getString("pronounce")
+                        res.getString("html")
                 );
-                list.add(word);
+                list.add(word.getWord_target());
             }
             res.close();
             statement.close();
@@ -84,7 +119,11 @@ public class DictionaryManagement {
             con = DriverManager.getConnection(URL);
             statement = con.createStatement();
 
-            String sql = "INSERT INTO " + table + " (word, pronounce, description) values ('" + word + "', '"
+            String h1 = "<h1>" + word + "</h1>";
+            String h3 = "<h3> // </h3>";
+            description = h1 + h3 + "<ul>" + description + "</ul>";
+
+            String sql = "INSERT INTO " + table + " (word, pronounce, html) values ('" + word + "', '"
                     + pronounce + "', '"
                     + description + "')";
             statement.executeUpdate(sql);
@@ -105,6 +144,7 @@ public class DictionaryManagement {
 
             String sql = "DELETE FROM " + table + " WHERE word = '" + word +"'";
             statement.executeUpdate(sql);
+            data.remove(word);
             statement.close();
             con.close();
         } catch (Exception e) {
@@ -120,9 +160,15 @@ public class DictionaryManagement {
             con = DriverManager.getConnection(URL);
             statement = con.createStatement();
 
-            String sql = "UPDATE " + table + " set description = '" +new_def
+            String h1 = "<h1>" + word + "</h1>";
+            String h3 = "<h3> // </h3>";
+            new_def = h1 + h3 + "<ul>" + new_def + "</ul>";
+
+            String sql = "UPDATE " + table + " set html = '" +new_def
                     + "' WHERE word = " + "'"+ word + "'";
             statement.executeUpdate(sql);
+            data.put(word, new Word(word, new_def));
+
             statement.close();
             con.close();
         }catch (Exception e) {
@@ -135,8 +181,8 @@ public class DictionaryManagement {
 
         try {
             String apiUrl = "http://api.voicerss.org/?";
-            String apiKeyParam = "key=" + URLEncoder.encode(apiKey, "UTF-8");
-            String textParam = "src=" + URLEncoder.encode(word, "UTF-8");
+            String apiKeyParam = "key=" + URLEncoder.encode(apiKey, StandardCharsets.UTF_8);
+            String textParam = "src=" + URLEncoder.encode(word, StandardCharsets.UTF_8);
             String langParam = language;
 
             URL url = new URL(apiUrl + apiKeyParam + "&" + textParam + "&" + langParam);
@@ -170,7 +216,7 @@ public class DictionaryManagement {
     public static String translate(String langFrom, String langTo, String text) throws IOException {
         // INSERT YOU URL HERE
         String urlStr = "https://script.google.com/macros/s/AKfycbyXtVyrIooqNlmO-MZniN7nexchzL_IVP9508e-GeEkWHwCIeT19x1iXkx7Qju9y-ps/exec" +
-                "?q=" + URLEncoder.encode(text, "UTF-8") +
+                "?q=" + URLEncoder.encode(text, StandardCharsets.UTF_8) +
                 "&target=" + langTo +
                 "&source=" + langFrom;
         URL url = new URL(urlStr);

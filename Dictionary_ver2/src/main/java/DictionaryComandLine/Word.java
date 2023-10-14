@@ -3,12 +3,10 @@ package DictionaryComandLine;
 public class Word {
     private String word_target;
     private String word_explain;
-    private String word_pronouce;
 
-    public Word (String t, String e, String p) {
+    public Word (String t, String e) {
         word_target = t;
         word_explain = e;
-        word_pronouce = p;
     }
 
     public String getWord_target() {
@@ -26,13 +24,4 @@ public class Word {
     public void setWord_explain(String word_explain) {
         this.word_explain = word_explain;
     }
-
-    public String getWord_pronouce() {
-        return word_pronouce;
-    }
-
-    public void setWord_pronouce(String word_pronouce) {
-        this.word_pronouce = word_pronouce;
-    }
-
 }
