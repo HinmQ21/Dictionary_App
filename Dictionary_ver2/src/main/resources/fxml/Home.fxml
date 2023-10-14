@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
@@ -14,7 +15,7 @@
          <children>
             <VBox alignment="CENTER" prefHeight="558.0" prefWidth="120.0" styleClass="root" stylesheets="@../Ultis/value/styles.css">
                <children>
-                  <ToggleButton alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#onActionSearch" prefHeight="55.0" prefWidth="120.0" styleClass="transparent" stylesheets="@../Ultis/value/styles.css" text="SEARCH">
+                  <ToggleButton alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#onActionSearch" prefHeight="55.0" prefWidth="120.0" styleClass="menu-item" stylesheets="@../Ultis/value/styles.css" text="SEARCH">
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -25,8 +26,11 @@
                      <font>
                         <Font name="Calibri Bold" size="14.0" />
                      </font>
+                     <tooltip>
+                        <Tooltip text="Tìm kiếm " />
+                     </tooltip>
                   </ToggleButton>
-                  <ToggleButton alignment="CENTER_LEFT" layoutX="10.0" layoutY="264.0" mnemonicParsing="false" onAction="#onActionAdd" prefHeight="55.0" prefWidth="120.0" styleClass="transparent" stylesheets="@../Ultis/value/styles.css" text="ADD">
+                  <ToggleButton alignment="CENTER_LEFT" layoutX="10.0" layoutY="264.0" mnemonicParsing="false" onAction="#onActionAdd" prefHeight="55.0" prefWidth="120.0" styleClass="menu-item" stylesheets="@../Ultis/value/styles.css" text="ADD">
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -37,8 +41,11 @@
                      <font>
                         <Font name="Calibri Bold" size="14.0" />
                      </font>
+                     <tooltip>
+                        <Tooltip text="Thêm " />
+                     </tooltip>
                   </ToggleButton>
-                  <ToggleButton alignment="CENTER_LEFT" layoutX="10.0" layoutY="289.0" mnemonicParsing="false" onAction="#onActionTranslate" prefHeight="55.0" prefWidth="120.0" styleClass="transparent" stylesheets="@../Ultis/value/styles.css" text="TRANSLATE">
+                  <ToggleButton alignment="CENTER_LEFT" layoutX="10.0" layoutY="289.0" mnemonicParsing="false" onAction="#onActionTranslate" prefHeight="55.0" prefWidth="120.0" styleClass="menu-item" stylesheets="@../Ultis/value/styles.css" text="TRANSLATE">
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -49,8 +56,11 @@
                      <font>
                         <Font name="Calibri Bold" size="14.0" />
                      </font>
+                     <tooltip>
+                        <Tooltip text="Dịch" />
+                     </tooltip>
                   </ToggleButton>
-                  <ToggleButton alignment="CENTER_LEFT" layoutX="10.0" layoutY="315.0" mnemonicParsing="false" onAction="#onActionGrammar" prefHeight="55.0" prefWidth="120.0" styleClass="transparent" stylesheets="@../Ultis/value/styles.css" text="GRAMMAR">
+                  <ToggleButton alignment="CENTER_LEFT" layoutX="10.0" layoutY="315.0" mnemonicParsing="false" onAction="#onActionGrammar" prefHeight="55.0" prefWidth="120.0" styleClass="menu-item" stylesheets="@../Ultis/value/styles.css" text="GRAMMAR">
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -61,8 +71,11 @@
                      <font>
                         <Font name="Calibri Bold" size="14.0" />
                      </font>
+                     <tooltip>
+                        <Tooltip text="Ôn tập" />
+                     </tooltip>
                   </ToggleButton>
-                  <ToggleButton alignment="CENTER_LEFT" layoutX="10.0" layoutY="340.0" mnemonicParsing="false" onAction="#onActionGame" prefHeight="55.0" prefWidth="120.0" styleClass="transparent" stylesheets="@../Ultis/value/styles.css" text="GAME">
+                  <ToggleButton alignment="CENTER_LEFT" layoutX="10.0" layoutY="340.0" mnemonicParsing="false" onAction="#onActionGame" prefHeight="55.0" prefWidth="120.0" styleClass="menu-item" stylesheets="@../Ultis/value/styles.css" text="GAME">
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -73,6 +86,9 @@
                      <font>
                         <Font name="Calibri Bold" size="14.0" />
                      </font>
+                     <tooltip>
+                        <Tooltip text="Trò chơi" />
+                     </tooltip>
                   </ToggleButton>
                </children>
             </VBox>
