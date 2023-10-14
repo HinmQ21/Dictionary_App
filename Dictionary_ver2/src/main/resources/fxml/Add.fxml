@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="558.0" prefWidth="787.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AddController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="558.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AddController">
 <center>
    <VBox prefHeight="558.0" prefWidth="900.0" stylesheets="@../Ultis/value/styles.css" BorderPane.alignment="CENTER">
       <children>
@@ -21,12 +21,12 @@
                <Insets />
             </VBox.margin>
             <children>
-               <ImageView fitHeight="132.0" fitWidth="163.0" pickOnBounds="true" preserveRatio="true">
+               <ImageView fitHeight="132.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                   <image>
-                     <Image url="@../Ultis/image/hero2.jpg" />
+                     <Image url="@../Ultis/images/ul038-0314.jpg" />
                   </image>
                </ImageView>
-               <VBox alignment="CENTER" prefHeight="137.0" prefWidth="900.0" styleClass="add_top-background" stylesheets="@../Ultis/value/styles.css">
+               <VBox alignment="CENTER" prefHeight="132.0" prefWidth="580.0" styleClass="add_top-background" stylesheets="@../Ultis/value/styles.css">
                   <children>
                      <Label prefHeight="52.0" prefWidth="452.0" text="ADD NEW VOCABULARY" textFill="WHITE">
                         <VBox.margin>
@@ -46,14 +46,14 @@
                      </Label>
                   </children>
                </VBox>
-               <ImageView fitHeight="122.0" fitWidth="166.0" pickOnBounds="true" preserveRatio="true">
+               <ImageView fitHeight="132.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" styleClass="transparent">
                   <image>
-                     <Image url="@../Ultis/image/hero4.jpg" />
+                     <Image url="@../Ultis/images/ul038-0314.jpg" />
                   </image>
                </ImageView>
             </children>
          </HBox>
-         <HBox alignment="CENTER" prefHeight="558.0" prefWidth="787.0">
+         <HBox alignment="CENTER" prefHeight="558.0" prefWidth="780.0">
             <children>
                <VBox prefHeight="431.0" prefWidth="493.0">
                   <children>
@@ -61,13 +61,13 @@
                         <children>
                            <ImageView fitHeight="35.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
                               <image>
-                                 <Image url="@../Ultis/icon/icons8-abc-64.png" />
+                                 <Image url="@../Ultis/icons/abc.png" />
                               </image>
                               <HBox.margin>
                                  <Insets />
                               </HBox.margin>
                            </ImageView>
-                           <Label prefHeight="38.0" prefWidth="101.0" stylesheets="@../Ultis/value/styles.css" text="Từ tiếng anh" textFill="#82a0d8">
+                           <Label prefHeight="38.0" prefWidth="101.0" stylesheets="@../Ultis/value/styles.css" text="Từ tiếng anh" textFill="#0e9ebf">
                               <font>
                                  <Font name="Calibri Bold" size="18.0" />
                               </font>
@@ -89,13 +89,13 @@
                         <children>
                            <ImageView fitHeight="35.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
                               <image>
-                                 <Image url="@../Ultis/icon/icons8-pronounce-64.png" />
+                                 <Image url="@../Ultis/icons/pronounce.png" />
                               </image>
                               <HBox.margin>
                                  <Insets />
                               </HBox.margin>
                            </ImageView>
-                           <Label prefHeight="38.0" prefWidth="101.0" stylesheets="@../Ultis/value/styles.css" text="Phát âm" textFill="#82a0d8">
+                           <Label prefHeight="38.0" prefWidth="101.0" stylesheets="@../Ultis/value/styles.css" text="Phát âm" textFill="#0e9ebf">
                               <font>
                                  <Font name="Calibri Bold" size="18.0" />
                               </font>
@@ -117,10 +117,10 @@
                         <children>
                            <ImageView fitHeight="38.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                               <image>
-                                 <Image url="@../Ultis/icon/explain.png" />
+                                 <Image url="@../Ultis/icons/explain.png" />
                               </image>
                            </ImageView>
-                           <Label prefHeight="38.0" prefWidth="104.0" text="Nghĩa của từ" textFill="#82a0d8">
+                           <Label prefHeight="38.0" prefWidth="104.0" text="Nghĩa của từ" textFill="#0e9ebf">
                               <font>
                                  <Font name="Calibri Bold" size="18.0" />
                               </font>
@@ -130,12 +130,15 @@
                            </Label>
                         </children>
                      </HBox>
-                     <TextArea fx:id="defArea" prefHeight="152.0" prefWidth="494.0" promptText="Nhập nghĩa của từ..." styleClass="input" stylesheets="@../Ultis/value/styles.css">
+                     <TextArea fx:id="defArea" prefHeight="148.0" prefWidth="494.0" promptText="Nhập nghĩa của từ..." styleClass="input" stylesheets="@../Ultis/value/styles.css">
                         <VBox.margin>
                            <Insets bottom="10.0" />
                         </VBox.margin>
                      </TextArea>
-                     <Button mnemonicParsing="false" onAction="#onActionSave" prefHeight="0.0" prefWidth="0.0" styleClass="add-button" stylesheets="@../Ultis/value/styles.css" text="Thêm" textFill="WHITE" />
+                     <Button mnemonicParsing="false" onAction="#onActionSave" prefHeight="3.0" prefWidth="14.0" styleClass="add-button" stylesheets="@../Ultis/value/styles.css" text="Thêm" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin></Button>
                   </children>
                </VBox>
             </children>

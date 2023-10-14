@@ -12,13 +12,13 @@
    <left>
       <HBox BorderPane.alignment="CENTER">
          <children>
-            <VBox alignment="CENTER" prefHeight="558.0" prefWidth="118.0" styleClass="root" stylesheets="@../Ultis/value/styles.css">
+            <VBox alignment="CENTER" prefHeight="558.0" prefWidth="120.0" styleClass="root" stylesheets="@../Ultis/value/styles.css">
                <children>
                   <ToggleButton alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#onActionSearch" prefHeight="55.0" prefWidth="120.0" styleClass="transparent" stylesheets="@../Ultis/value/styles.css" text="SEARCH">
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../Ultis/icon/search_home.png" />
+                              <Image url="@../Ultis/icons/search_home.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -30,7 +30,7 @@
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../Ultis/icon/add_home.png" />
+                              <Image url="@../Ultis/icons/add_home.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -42,7 +42,7 @@
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../Ultis/icon/translate_home.png" />
+                              <Image url="@../Ultis/icons/translate_home.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -54,7 +54,7 @@
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../Ultis/icon/grammar_home.png" />
+                              <Image url="@../Ultis/icons/grammar_home.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -66,7 +66,7 @@
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../Ultis/icon/game_home.png" />
+                              <Image url="@../Ultis/icons/game_home.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -76,7 +76,7 @@
                   </ToggleButton>
                </children>
             </VBox>
-            <BorderPane fx:id="container" prefHeight="558.0" prefWidth="787.0" />
+            <BorderPane fx:id="container" prefHeight="558.0" prefWidth="780.0" />
          </children>
       </HBox>
    </left>

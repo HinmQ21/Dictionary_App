@@ -1,4 +1,4 @@
-package Controller;
+    package Controller;
 
 import DictionaryComandLine.DictionaryManagement;
 import javafx.fxml.FXML;
