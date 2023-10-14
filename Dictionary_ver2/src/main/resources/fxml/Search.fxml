@@ -115,7 +115,7 @@
                                           </ImageView>
                                        </graphic>
                                        <tooltip>
-                                          <Tooltip text="voice" />
+                                          <Tooltip text="Voice" />
                                        </tooltip>
                                        <HBox.margin>
                                           <Insets />
@@ -130,7 +130,7 @@
                                           </ImageView>
                                        </graphic>
                                        <tooltip>
-                                          <Tooltip text="remove" />
+                                          <Tooltip text="Remove" />
                                        </tooltip>
                                        <HBox.margin>
                                           <Insets left="5.0" right="5.0" />

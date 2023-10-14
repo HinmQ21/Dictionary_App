@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
@@ -138,7 +139,10 @@
                      <Button mnemonicParsing="false" onAction="#onActionSave" prefHeight="3.0" prefWidth="14.0" styleClass="add-button" stylesheets="@../Ultis/value/styles.css" text="Thêm" textFill="WHITE">
                            <VBox.margin>
                               <Insets />
-                           </VBox.margin></Button>
+                           </VBox.margin>
+                           <tooltip>
+                              <Tooltip text="Thêm 1 từ vào từ vựng" />
+                           </tooltip></Button>
                   </children>
                </VBox>
             </children>
