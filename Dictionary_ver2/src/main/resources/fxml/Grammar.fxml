@@ -1,30 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextArea?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-
-<BorderPane xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.GrammarController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="558.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.GrammarController">
+   <top>
+      <HBox alignment="CENTER" prefHeight="141.0" prefWidth="780.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="141.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Ultis/images/6854479.jpg" />
+               </image>
+            </ImageView>
+            <VBox alignment="CENTER" prefHeight="141.0" prefWidth="580.0" styleClass="add_top-background" stylesheets="@../Ultis/value/styles.css">
+               <children>
+                  <Label alignment="CENTER" prefHeight="52.0" prefWidth="452.0" text="STUDY GRAMMAR" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets top="30.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Book Antiqua" size="38.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="234.0" layoutY="57.0" prefHeight="58.0" prefWidth="573.0" text="Each hand-span of road is a sieve's-worth of wisdom." textFill="WHITE">
+                     <font>
+                        <Font name="Book Antiqua" size="24.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="15.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </VBox>
+            <ImageView fitHeight="141.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" styleClass="transparent">
+               <image>
+                  <Image url="@../Ultis/images/6911852.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+   </top>
    <center>
-      <AnchorPane prefHeight="400.0" prefWidth="600.0">
-          <children>
-              <Label layoutX="220.0" layoutY="40.0" prefHeight="50.0" prefWidth="134.0" text="GRAMMAR STUDY" />
-              <AnchorPane layoutX="20.0" layoutY="90.0" prefHeight="279.0" prefWidth="200.0">
-                  <children>
-                      <Label layoutX="58.0" layoutY="14.0" text="GRAMMAR LIST" />
-                      <ListView fx:id="grammarName" layoutX="5.0" layoutY="50.0" onMouseClicked="#onMouseClickView" prefHeight="200.0" prefWidth="190.0" />
-                  </children>
-              </AnchorPane>
-              <AnchorPane layoutX="238.0" layoutY="90.0" prefHeight="279.0" prefWidth="303.0">
-                  <children>
-                      <Label layoutX="113.0" layoutY="14.0" text="DEFINITION" />
-                      <TextArea fx:id="grammarDef" layoutX="14.0" layoutY="52.0" prefHeight="200.0" prefWidth="278.0" />
-                  </children>
-              </AnchorPane>
-          </children>
-      </AnchorPane>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="417.0" prefWidth="225.0">
+               <children>
+                  <Label prefHeight="60.0" prefWidth="225.0" styleClass="title" stylesheets="@../Ultis/value/styles.css" text="Grammar List" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="22.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="2.0" left="5.0" right="3.0" top="5.0" />
+                     </VBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Ultis/icons/result_white.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+                  <ListView fx:id="grammarName" onMouseClicked="#onMouseClickView" prefHeight="341.0" prefWidth="232.0" styleClass="definition-wrapper" stylesheets="@../Ultis/value/styles.css">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="3.0" top="5.0" />
+                     </VBox.margin></ListView>
+               </children>
+            </VBox>
+            <VBox prefHeight="417.0" prefWidth="556.0">
+               <children>
+                  <Label prefHeight="60.0" prefWidth="547.0" styleClass="title" stylesheets="@../Ultis/value/styles.css" text="Definition" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="22.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="2.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Ultis/icons/explain_white.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+                  <TextArea fx:id="grammarDef" prefHeight="342.0" prefWidth="547.0" styleClass="definition-wrapper" stylesheets="@../Ultis/value/styles.css">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="4.0" />
+                     </VBox.margin></TextArea>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
    </center>
 </BorderPane>

@@ -22,9 +22,9 @@
                <Insets />
             </VBox.margin>
             <children>
-               <ImageView fitHeight="132.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+               <ImageView fitHeight="132.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                   <image>
-                     <Image url="@../Ultis/images/ul038-0314.jpg" />
+                     <Image url="@../Ultis/images/8909708%20(1).jpg" />
                   </image>
                </ImageView>
                <VBox alignment="CENTER" prefHeight="132.0" prefWidth="580.0" styleClass="add_top-background" stylesheets="@../Ultis/value/styles.css">
@@ -47,9 +47,9 @@
                      </Label>
                   </children>
                </VBox>
-               <ImageView fitHeight="132.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" styleClass="transparent">
+               <ImageView fitHeight="132.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" styleClass="transparent">
                   <image>
-                     <Image url="@../Ultis/images/ul038-0314.jpg" />
+                     <Image url="@../Ultis/images/19199094%20(1).jpg" />
                   </image>
                </ImageView>
             </children>
@@ -138,7 +138,7 @@
                      </TextArea>
                      <Button mnemonicParsing="false" onAction="#onActionSave" prefHeight="3.0" prefWidth="14.0" styleClass="add-button" stylesheets="@../Ultis/value/styles.css" text="Thêm" textFill="WHITE">
                            <VBox.margin>
-                              <Insets />
+                              <Insets bottom="10.0" />
                            </VBox.margin>
                            <tooltip>
                               <Tooltip text="Thêm 1 từ vào từ vựng" />
