@@ -158,6 +158,14 @@
                                              </image>
                                           </ImageView>
                                        </graphic></Button>
+                                    <Button onAction="#onActionUpdateCancelation" layoutX="316.0" layoutY="17.0" mnemonicParsing="false" text="X" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="deleteConfirmation" prefHeight="200.0" prefWidth="276.0">
+                                 <children>
+                                    <Button layoutX="50.0" layoutY="111.0" mnemonicParsing="false" onAction="#onActionDeleteConfirmation" text="YES" />
+                                    <Button layoutX="151.0" layoutY="111.0" mnemonicParsing="false" onAction="#onActionDeleteCancelation" text="NO" />
+                                    <Label layoutX="78.0" layoutY="30.0" prefHeight="60.0" prefWidth="120.0" text="ARE YOU SURE ??" />
                                  </children>
                               </AnchorPane>
                            </children>
