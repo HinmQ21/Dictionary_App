@@ -30,6 +30,9 @@ public class SearchController implements Initializable {
     @FXML
     private TextArea newDefinition;
 
+    @FXML
+    private AnchorPane deleteConfirmation;
+
     private ObservableList<String> list = FXCollections.observableArrayList();
 
 
@@ -39,6 +42,7 @@ public class SearchController implements Initializable {
         list = DictionaryManagement.dbSearch("'a%'", eng_vieTable);
         listWord.setItems(list);
         updateWindow.setVisible(false);
+        deleteConfirmation.setVisible(false);
     }
 
     public void onActionSearchBtn() {
@@ -61,8 +65,21 @@ public class SearchController implements Initializable {
         Word selectedWord = DictionaryManagement.getData().get(selectedString);
 
         if (selectedWord != null) {
+            deleteConfirmation.setVisible(true);
+        }
+    }
+
+    public void onActionDeleteConfirmation() {
+        String selectedString = listWord.getSelectionModel().getSelectedItem();
+        Word selectedWord = DictionaryManagement.getData().get(selectedString);
+
+        if (selectedWord != null) {
             DictionaryManagement.dbDelete(selectedString, eng_vieTable);
         }
+    }
+
+    public void onActionDeleteCancelation() {
+        deleteConfirmation.setVisible(false);
     }
 
     public void onActionUpdate() {
@@ -71,6 +88,10 @@ public class SearchController implements Initializable {
         if (selectedString != null) {
             updateWindow.setVisible(true);
         }
+    }
+
+    public void onActionUpdateCancelation() {
+        updateWindow.setVisible(false);
     }
 
     public void onActionSubmit() {
