@@ -5,8 +5,10 @@ import DictionaryComandLine.Word;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.web.WebView;
+import javafx.scene.image.ImageView;
 
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -16,6 +18,10 @@ import java.util.ResourceBundle;
 
 public class SearchController implements Initializable {
     private final String eng_vieTable = "av";
+
+    private final String viet_engTable = "va";
+
+    private String curTable;
 
     @FXML
     private TextField searchField;
@@ -33,21 +39,45 @@ public class SearchController implements Initializable {
     @FXML
     private AnchorPane deleteConfirmation;
 
+    @FXML
+    private ImageView leftFlag;
+
+    @FXML
+    private ImageView rightFlag;
+
     private ObservableList<String> list = FXCollections.observableArrayList();
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        DictionaryManagement.readData();
-        list = DictionaryManagement.dbSearch("'a%'", eng_vieTable);
+        DictionaryManagement.readData(eng_vieTable);
+        curTable = eng_vieTable;
+        list = DictionaryManagement.dbSearch("'a%'", curTable);
         listWord.setItems(list);
         updateWindow.setVisible(false);
         deleteConfirmation.setVisible(false);
     }
 
+    public void onActionExchange() {
+        if (curTable.equals(eng_vieTable)) {
+            curTable = viet_engTable;
+        } else curTable = eng_vieTable;
+
+        //swap flag
+        Image tempIm = leftFlag.getImage();
+        leftFlag.setImage(rightFlag.getImage());
+        rightFlag.setImage(tempIm);
+
+        searchField.clear();
+        definitionArea.getEngine().loadContent("");
+        DictionaryManagement.readData(curTable);
+        list = DictionaryManagement.dbSearch("'a%'", curTable);
+        listWord.setItems(list);
+    }
+
     public void onActionSearchBtn() {
         list = DictionaryManagement.dbSearch("'" + searchField.getText().toLowerCase().trim() + "%'",
-                eng_vieTable);
+                curTable);
         listWord.setItems(list);
     }
 
@@ -74,7 +104,7 @@ public class SearchController implements Initializable {
         Word selectedWord = DictionaryManagement.getData().get(selectedString);
 
         if (selectedWord != null) {
-            DictionaryManagement.dbDelete(selectedString, eng_vieTable);
+            DictionaryManagement.dbDelete(selectedString, curTable);
         }
     }
 
@@ -99,7 +129,7 @@ public class SearchController implements Initializable {
 
         if (!new_def.isEmpty()) {
             String selectedString = listWord.getSelectionModel().getSelectedItem();
-            DictionaryManagement.dbUpdate(selectedString, new_def, eng_vieTable);
+            DictionaryManagement.dbUpdate(selectedString, new_def, curTable);
 
             updateWindow.setVisible(false);
             definitionArea.getEngine().loadContent(DictionaryManagement.getData().get(selectedString).getWord_explain());

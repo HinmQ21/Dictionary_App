@@ -92,6 +92,19 @@
                      <children>
                         <HBox alignment="CENTER" prefHeight="50.0" prefWidth="527.0" styleClass="search_title" stylesheets="@../Ultis/value/styles.css">
                            <children>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <Button layoutX="60.0" layoutY="10.0" mnemonicParsing="false" onAction="#onActionExchange" text="Exchange" />
+                                    <ImageView fx:id="leftFlag" fitHeight="31.0" fitWidth="38.0" layoutX="14.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Ultis/images/english.png" />
+                                       </image></ImageView>
+                                    <ImageView fx:id="rightFlag" fitHeight="31.0" fitWidth="38.0" layoutX="135.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Ultis/images/vietnam.png" />
+                                       </image></ImageView>
+                                 </children>
+                              </AnchorPane>
                               <Button mnemonicParsing="false" onAction="#onActionUpdate" prefHeight="35.0" prefWidth="85.0" styleClass="search-button">
                                  <graphic>
                                     <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
@@ -158,7 +171,7 @@
                                              </image>
                                           </ImageView>
                                        </graphic></Button>
-                                    <Button onAction="#onActionUpdateCancelation" layoutX="316.0" layoutY="17.0" mnemonicParsing="false" text="X" />
+                                    <Button layoutX="316.0" layoutY="17.0" mnemonicParsing="false" onAction="#onActionUpdateCancelation" text="X" />
                                  </children>
                               </AnchorPane>
                               <AnchorPane fx:id="deleteConfirmation" prefHeight="200.0" prefWidth="276.0">

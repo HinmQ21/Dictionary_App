@@ -30,13 +30,13 @@ public class DictionaryManagement {
 
     private static final Map<String, Word> data = new HashMap<String, Word>();
 
-    private static final String tableEV = "av";
 
     public static Map<String, Word> getData() {
         return data;
     }
 
-    public static void readData () {
+    public static void readData (String dataTable) {
+        data.clear();
         Connection con = null;
         Statement statement = null;
         try {
@@ -45,7 +45,7 @@ public class DictionaryManagement {
             con.setAutoCommit(false);
             statement = con.createStatement();
 
-            String sql_query = "SELECT * FROM " + tableEV + " ORDER BY word";
+            String sql_query = "SELECT * FROM " + dataTable + " ORDER BY word";
             ResultSet res = statement.executeQuery(sql_query);
             while(res.next()) {
                 Word word = new Word(res.getString("word"),
@@ -214,7 +214,6 @@ public class DictionaryManagement {
     }
 
     public static String translate(String langFrom, String langTo, String text) throws IOException {
-        // INSERT YOU URL HERE
         String urlStr = "https://script.google.com/macros/s/AKfycbyXtVyrIooqNlmO-MZniN7nexchzL_IVP9508e-GeEkWHwCIeT19x1iXkx7Qju9y-ps/exec" +
                 "?q=" + URLEncoder.encode(text, StandardCharsets.UTF_8) +
                 "&target=" + langTo +
