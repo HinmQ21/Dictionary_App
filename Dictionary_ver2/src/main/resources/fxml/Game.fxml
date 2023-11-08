@@ -1,14 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Line?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="Controller.GameController"
-            prefHeight="400.0" prefWidth="600.0">
 
-</AnchorPane>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane layoutX="-1.0" layoutY="1.0" prefHeight="400.0" prefWidth="298.0">
+               <children>
+                  <Label layoutX="109.0" layoutY="60.0" text="HangMan" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="297.0" layoutY="2.0" prefHeight="400.0" prefWidth="305.0">
+               <children>
+                  <Label layoutX="121.0" layoutY="58.0" text="Quiz Game" />
+               </children>
+            </AnchorPane>
+            <Line endX="296.9999694824219" endY="402.79998779296875" startX="296.9999694824219" startY="1.9999938011169434" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
