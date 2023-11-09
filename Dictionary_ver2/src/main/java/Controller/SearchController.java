@@ -28,7 +28,7 @@ public class SearchController implements Initializable {
     @FXML
     private WebView definitionArea;
     @FXML
-    private ListView<String> listWord;
+    private ListView<Word> listWord;
 
     @FXML
     private AnchorPane updateWindow;
@@ -45,12 +45,11 @@ public class SearchController implements Initializable {
     @FXML
     private ImageView rightFlag;
 
-    private ObservableList<String> list = FXCollections.observableArrayList();
+    private ObservableList<Word> list = FXCollections.observableArrayList();
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        DictionaryManagement.readData(eng_vieTable);
         curTable = eng_vieTable;
         list = DictionaryManagement.dbSearch("'a%'", curTable);
         listWord.setItems(list);
@@ -70,7 +69,6 @@ public class SearchController implements Initializable {
 
         searchField.clear();
         definitionArea.getEngine().loadContent("");
-        DictionaryManagement.readData(curTable);
         list = DictionaryManagement.dbSearch("'a%'", curTable);
         listWord.setItems(list);
     }
@@ -82,8 +80,7 @@ public class SearchController implements Initializable {
     }
 
     public void onMouseClickListView() {
-        String selectedString = listWord.getSelectionModel().getSelectedItem();
-        Word selectedWord = DictionaryManagement.getData().get(selectedString);
+        Word selectedWord = listWord.getSelectionModel().getSelectedItem();
         if (selectedWord != null) {
             definitionArea.getEngine().loadContent(selectedWord.getWord_explain());
             searchField.setText(selectedWord.getWord_target());
@@ -91,20 +88,18 @@ public class SearchController implements Initializable {
     }
 
     public void onActionDelete() {
-        String selectedString = listWord.getSelectionModel().getSelectedItem();
-        Word selectedWord = DictionaryManagement.getData().get(selectedString);
-
+        Word selectedWord = listWord.getSelectionModel().getSelectedItem();
         if (selectedWord != null) {
             deleteConfirmation.setVisible(true);
         }
     }
 
     public void onActionDeleteConfirmation() {
-        String selectedString = listWord.getSelectionModel().getSelectedItem();
-        Word selectedWord = DictionaryManagement.getData().get(selectedString);
-
+        Word selectedWord = listWord.getSelectionModel().getSelectedItem();
+        String word = selectedWord.getWord_target();
         if (selectedWord != null) {
-            DictionaryManagement.dbDelete(selectedString, curTable);
+            DictionaryManagement.dbDelete(word, curTable);
+            deleteConfirmation.setVisible(false);
         }
     }
 
@@ -113,9 +108,9 @@ public class SearchController implements Initializable {
     }
 
     public void onActionUpdate() {
-        String selectedString = listWord.getSelectionModel().getSelectedItem();
+        Word selectedWord = listWord.getSelectionModel().getSelectedItem();
 
-        if (selectedString != null) {
+        if (selectedWord != null) {
             updateWindow.setVisible(true);
         }
     }
@@ -128,17 +123,17 @@ public class SearchController implements Initializable {
         String new_def = newDefinition.getText().toLowerCase().trim();
 
         if (!new_def.isEmpty()) {
-            String selectedString = listWord.getSelectionModel().getSelectedItem();
-            DictionaryManagement.dbUpdate(selectedString, new_def, curTable);
+            Word selectedWord = listWord.getSelectionModel().getSelectedItem();
+            DictionaryManagement.dbUpdate(selectedWord.getWord_target(), new_def, curTable);
 
             updateWindow.setVisible(false);
-            definitionArea.getEngine().loadContent(DictionaryManagement.getData().get(selectedString).getWord_explain());
+            definitionArea.getEngine().loadContent(new_def);
             newDefinition.clear();
         }
     }
 
     public void onActionSpeak() {
-        String selectedString = listWord.getSelectionModel().getSelectedItem();
-        DictionaryManagement.TextToSpeech(selectedString, "hl=en-us");
+        Word selectedWord = listWord.getSelectionModel().getSelectedItem();
+        DictionaryManagement.TextToSpeech(selectedWord.getWord_target(), "hl=en-us");
     }
 }

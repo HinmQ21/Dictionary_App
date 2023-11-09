@@ -28,39 +28,6 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 public class DictionaryManagement {
     private final static String URL = "jdbc:sqlite:./src/main/resources/data/dict_hh.db";
 
-    private static final Map<String, Word> data = new HashMap<String, Word>();
-
-
-    public static Map<String, Word> getData() {
-        return data;
-    }
-
-    public static void readData (String dataTable) {
-        data.clear();
-        Connection con = null;
-        Statement statement = null;
-        try {
-            Class.forName("org.sqlite.JDBC");
-            con = DriverManager.getConnection(URL);
-            con.setAutoCommit(false);
-            statement = con.createStatement();
-
-            String sql_query = "SELECT * FROM " + dataTable + " ORDER BY word";
-            ResultSet res = statement.executeQuery(sql_query);
-            while(res.next()) {
-                Word word = new Word(res.getString("word"),
-                        res.getString("html")
-                );
-                data.put(word.getWord_target(), word);
-            }
-
-            statement.close();
-            con.close();
-        }catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-    }
-
     public static boolean dbHasWord(String word, String table) {
         Connection con = null;
         Statement statement = null;
@@ -82,8 +49,8 @@ public class DictionaryManagement {
         return cnt != 0;
     }
 
-    public static ObservableList<String> dbSearch(String word_target, String table) {
-        ObservableList<String> list = FXCollections.observableArrayList();
+    public static ObservableList<Word> dbSearch(String word_target, String table) {
+        ObservableList<Word> list = FXCollections.observableArrayList();
         Connection con = null;
         Statement statement = null;
 
@@ -100,7 +67,7 @@ public class DictionaryManagement {
                 Word word = new Word(res.getString("word"),
                         res.getString("html")
                 );
-                list.add(word.getWord_target());
+                list.add(word);
             }
             res.close();
             statement.close();
@@ -144,7 +111,6 @@ public class DictionaryManagement {
 
             String sql = "DELETE FROM " + table + " WHERE word = '" + word +"'";
             statement.executeUpdate(sql);
-            data.remove(word);
             statement.close();
             con.close();
         } catch (Exception e) {
@@ -167,7 +133,6 @@ public class DictionaryManagement {
             String sql = "UPDATE " + table + " set html = '" +new_def
                     + "' WHERE word = " + "'"+ word + "'";
             statement.executeUpdate(sql);
-            data.put(word, new Word(word, new_def));
 
             statement.close();
             con.close();

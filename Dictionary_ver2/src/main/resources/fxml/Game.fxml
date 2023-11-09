@@ -6,16 +6,17 @@
 <?import javafx.scene.shape.Line?>
 
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1"
+fx:controller="Controller.GameController">
    <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="gameContainer" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <AnchorPane layoutX="-1.0" layoutY="1.0" prefHeight="400.0" prefWidth="298.0">
+            <AnchorPane fx:id="hangMan" layoutX="-1.0" layoutY="1.0" prefHeight="400.0" prefWidth="298.0">
                <children>
                   <Label layoutX="109.0" layoutY="60.0" text="HangMan" />
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="297.0" layoutY="2.0" prefHeight="400.0" prefWidth="305.0">
+            <AnchorPane onMouseClicked="#onActionStartQuizGame" fx:id="quizGame" layoutX="297.0" layoutY="2.0" prefHeight="400.0" prefWidth="305.0">
                <children>
                   <Label layoutX="121.0" layoutY="58.0" text="Quiz Game" />
                </children>

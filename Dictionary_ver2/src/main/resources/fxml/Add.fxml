@@ -10,6 +10,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -81,7 +82,7 @@
                            <Insets top="5.0" />
                         </VBox.margin>
                      </HBox>
-                     <TextField fx:id="wordField" prefHeight="42.0" prefWidth="494.0" promptText="Nhập từ tiếng anh..." styleClass="input" stylesheets="@../Ultis/value/styles.css">
+                     <TextField fx:id="wordField" prefHeight="42.0" prefWidth="464.0" promptText="Nhập từ tiếng anh..." styleClass="input" stylesheets="@../Ultis/value/styles.css">
                         <VBox.margin>
                            <Insets bottom="5.0" />
                         </VBox.margin>
@@ -131,18 +132,21 @@
                            </Label>
                         </children>
                      </HBox>
-                     <TextArea fx:id="defArea" prefHeight="148.0" prefWidth="494.0" promptText="Nhập nghĩa của từ..." styleClass="input" stylesheets="@../Ultis/value/styles.css">
+                     <TextArea fx:id="defArea" prefHeight="149.0" prefWidth="494.0" promptText="Nhập nghĩa của từ..." styleClass="input" stylesheets="@../Ultis/value/styles.css">
                         <VBox.margin>
                            <Insets bottom="10.0" />
                         </VBox.margin>
                      </TextArea>
-                     <Button mnemonicParsing="false" onAction="#onActionSave" prefHeight="3.0" prefWidth="14.0" styleClass="add-button" stylesheets="@../Ultis/value/styles.css" text="Thêm" textFill="WHITE">
-                           <VBox.margin>
-                              <Insets bottom="10.0" />
-                           </VBox.margin>
-                           <tooltip>
-                              <Tooltip text="Thêm 1 từ vào từ vựng" />
-                           </tooltip></Button>
+                        <Pane prefHeight="51.0" prefWidth="494.0">
+                           <children>
+                           <Button layoutX="14.0" layoutY="7.0" mnemonicParsing="false" onAction="#onActionSave" prefHeight="3.0" prefWidth="14.0" styleClass="add-button" stylesheets="@../Ultis/value/styles.css" text="Thêm" textFill="WHITE">
+                                 <tooltip>
+                                    <Tooltip text="Thêm 1 từ vào từ vựng" />
+                                 </tooltip>
+                              </Button>
+                              <Label fx:id="addNotification" layoutX="134.0" layoutY="6.0" prefHeight="32.0" prefWidth="330.0" />
+                           </children>
+                        </Pane>
                   </children>
                </VBox>
             </children>
