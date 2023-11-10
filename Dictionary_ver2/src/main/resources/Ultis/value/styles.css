@@ -123,6 +123,18 @@
      -fx-background-color: #00ACEA;
 }
 
+.root_update{
+    -fx-background-color: #00EFD1;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+}
+
+.input_cancle{
+    -fx-border-color: #ffff;
+    -fx-font-size: 20px;
+    -fx-border-width: 1.5;
+}
+
 /*.search-box{
     -fx-background-color:   #44008b;
     -fx-background-radius: 30;

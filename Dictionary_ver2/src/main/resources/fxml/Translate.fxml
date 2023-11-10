@@ -99,7 +99,18 @@
                            <tooltip>
                               <Tooltip text="Dịch từ vựng" />
                            </tooltip></Button>
-                        <Button onAction="#onActionSwitch" layoutX="13.0" layoutY="34.0" mnemonicParsing="false" text="SWITCH" />
+                        <Button layoutX="10.0" layoutY="22.0" mnemonicParsing="false" onAction="#onActionSwitch" prefHeight="40.0" prefWidth="67.0" styleClass="translate-button" stylesheets="@../Ultis/value/styles.css">
+                           <graphic>
+                              <ImageView fitHeight="32.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Ultis/icons/switch.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <tooltip>
+                              <Tooltip text="Thay đổi" />
+                           </tooltip>
+                        </Button>
                      </children>
                   </Pane>
                   <VBox alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="420.0" prefWidth="330.0">
