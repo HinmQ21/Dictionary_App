@@ -133,7 +133,11 @@ public class SearchController implements Initializable {
     }
 
     public void onActionSpeak() {
-        Word selectedWord = listWord.getSelectionModel().getSelectedItem();
-        DictionaryManagement.TextToSpeech(selectedWord.getWord_target(), "hl=en-us");
+        try {
+            Word selectedWord = listWord.getSelectionModel().getSelectedItem();
+            DictionaryManagement.TextToSpeech(selectedWord.getWord_target(), "hl=en-us");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

@@ -19,14 +19,15 @@
                </image>
             </ImageView>
             <Label fx:id="quesNum" layoutX="355.0" layoutY="84.0" text="Question 1 / 10 :" />
-            <Button fx:id="butA" layoutX="225.0" layoutY="242.0" mnemonicParsing="false" onAction="#onActionHandleAns" prefHeight="62.0" prefWidth="54.0" text="A" />
-            <Button fx:id="butB" layoutX="225.0" layoutY="376.0" mnemonicParsing="false" onAction="#onActionHandleAns" prefHeight="62.0" prefWidth="54.0" text="C" />
-            <Button fx:id="butC" layoutX="546.0" layoutY="242.0" mnemonicParsing="false" onAction="#onActionHandleAns" prefHeight="62.0" prefWidth="54.0" text="B" />
-            <Button fx:id="butD" layoutX="545.0" layoutY="376.0" mnemonicParsing="false" onAction="#onActionHandleAns" prefHeight="62.0" prefWidth="54.0" text="D" />
-            <Label fx:id="quesText" layoutX="274.0" layoutY="130.0" prefHeight="90.0" prefWidth="258.0" text="QUESTION" />
+            <Button fx:id="butA" layoutX="206.0" layoutY="242.0" mnemonicParsing="false" onAction="#onActionHandleAns" prefHeight="62.0" prefWidth="90.0" text="A" wrapText="true" />
+            <Button fx:id="butC" layoutX="205.0" layoutY="376.0" mnemonicParsing="false" onAction="#onActionHandleAns" prefHeight="62.0" prefWidth="90.0" text="C" wrapText="true" />
+            <Button fx:id="butB" layoutX="528.0" layoutY="242.0" mnemonicParsing="false" onAction="#onActionHandleAns" prefHeight="62.0" prefWidth="90.0" text="B" wrapText="true" />
+            <Button fx:id="butD" layoutX="528.0" layoutY="376.0" mnemonicParsing="false" onAction="#onActionHandleAns" prefHeight="62.0" prefWidth="90.0" text="D" wrapText="true" />
+            <Label fx:id="quesText" layoutX="315.0" layoutY="125.0" prefHeight="99.0" prefWidth="258.0" text="QUESTION" wrapText="true">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
             <Button layoutX="74.0" layoutY="72.0" mnemonicParsing="false" onAction="#onActionHome" text="Home" />
-            <Button layoutX="261.0" layoutY="78.0" mnemonicParsing="false" onAction="#onActionBack" text="&lt;--" />
-            <Button layoutX="499.0" layoutY="78.0" mnemonicParsing="false" onAction="#onActionNext" text="--&gt;" />
             <Pane layoutX="625.0" layoutY="41.0" prefHeight="134.0" prefWidth="154.0">
                <children>
                   <Label layoutX="53.0" layoutY="26.0" prefHeight="29.0" prefWidth="49.0" text="Score">
@@ -41,6 +42,33 @@
                   </Label>
                </children>
             </Pane>
+            <AnchorPane fx:id="resultPane" layoutX="152.0" layoutY="151.0" prefHeight="293.0" prefWidth="482.0">
+               <children>
+                  <Label fx:id="resLabel" layoutX="164.0" layoutY="42.0" prefHeight="42.0" prefWidth="172.0" text="Notification" wrapText="true">
+                     <font>
+                        <Font size="26.0" />
+                     </font></Label>
+                  <Label fx:id="resComment" layoutX="119.0" layoutY="104.0" prefHeight="115.0" prefWidth="261.0" text="Comment" wrapText="true">
+                     <font>
+                        <Font size="21.0" />
+                     </font></Label>
+                  <Button layoutX="188.0" layoutY="243.0" mnemonicParsing="false" onAction="#showAnswers" text="View answers" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="176.0" layoutY="445.0" prefHeight="107.0" prefWidth="462.0">
+               <children>
+                  <Label fx:id="C1" layoutX="28.0" layoutY="21.0" text="C1" />
+                  <Label fx:id="C2" layoutX="114.0" layoutY="21.0" text="C2" />
+                  <Label fx:id="C3" layoutX="215.0" layoutY="21.0" text="C3" />
+                  <Label fx:id="C4" layoutX="310.0" layoutY="21.0" text="C4" />
+                  <Label fx:id="C5" layoutX="388.0" layoutY="21.0" text="C5" />
+                  <Label fx:id="C6" layoutX="28.0" layoutY="66.0" text="C6" />
+                  <Label fx:id="C7" layoutX="114.0" layoutY="66.0" text="C7" />
+                  <Label fx:id="C8" layoutX="215.0" layoutY="66.0" text="C8" />
+                  <Label fx:id="C9" layoutX="310.0" layoutY="66.0" text="C9" />
+                  <Label fx:id="C10" layoutX="388.0" layoutY="66.0" text="C10" />
+               </children>
+            </AnchorPane>
          </children>
       </AnchorPane>
    </center>

@@ -20,7 +20,17 @@ public class MultiChoiceQuestion extends Question{
         return opts;
     }
 
-    public int getCorrectOpt() {
-        return correctOpt;
+    public String getCorrectOpt() {
+        if (correctOpt == 0) {
+            return "A";
+        } else if (correctOpt == 1) {
+            return "B";
+        } else if (correctOpt == 2) {
+            return "C";
+        } return "D";
+    }
+
+    public String getCorrectAnswer() {
+        return opts[correctOpt];
     }
 }
