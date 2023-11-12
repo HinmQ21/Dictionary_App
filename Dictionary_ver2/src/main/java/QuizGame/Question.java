@@ -1,7 +1,15 @@
 package QuizGame;
 
 public abstract class Question {
-    protected String ques;
+    protected String questionText;
 
-    protected String ans ;
+    protected int point;
+
+    public String getQuestionText() {
+        return questionText;
+    }
+
+    public int getPoint() {
+        return point;
+    }
 }

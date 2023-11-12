@@ -24,4 +24,5 @@ public class QuizGameController {
     public void onActionStartMulti() {
         showComponent("/fxml/multichoiceGame.fxml");
     }
+
 }

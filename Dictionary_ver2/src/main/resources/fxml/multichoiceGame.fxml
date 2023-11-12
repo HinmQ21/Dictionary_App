@@ -6,22 +6,41 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="558.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="558.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Game_Controller.MultichoiceGame">
    <center>
-      <AnchorPane prefHeight="558.0" prefWidth="780.0" BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="quizContainer" prefHeight="558.0" prefWidth="780.0" BorderPane.alignment="CENTER">
          <children>
             <ImageView fitHeight="558.0" fitWidth="780.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Ultis/images/quiz_background.jpg" />
                </image>
             </ImageView>
-            <Label fx:id="quesNum" layoutX="359.0" layoutY="84.0" text="Question 1 / 10 :" />
-            <Button fx:id="A" layoutX="225.0" layoutY="242.0" mnemonicParsing="false" text="A" />
-            <Button fx:id="B" layoutX="225.0" layoutY="376.0" mnemonicParsing="false" text="C" />
-            <Button fx:id="C" layoutX="546.0" layoutY="242.0" mnemonicParsing="false" text="B" />
-            <Button fx:id="D" layoutX="545.0" layoutY="376.0" mnemonicParsing="false" text="D" />
-            <Label fx:id="quesText" layoutX="376.0" layoutY="144.0" prefHeight="43.0" prefWidth="258.0" text="QUESTION" textAlignment="CENTER" />
+            <Label fx:id="quesNum" layoutX="355.0" layoutY="84.0" text="Question 1 / 10 :" />
+            <Button fx:id="butA" layoutX="225.0" layoutY="242.0" mnemonicParsing="false" onAction="#onActionHandleAns" prefHeight="62.0" prefWidth="54.0" text="A" />
+            <Button fx:id="butB" layoutX="225.0" layoutY="376.0" mnemonicParsing="false" onAction="#onActionHandleAns" prefHeight="62.0" prefWidth="54.0" text="C" />
+            <Button fx:id="butC" layoutX="546.0" layoutY="242.0" mnemonicParsing="false" onAction="#onActionHandleAns" prefHeight="62.0" prefWidth="54.0" text="B" />
+            <Button fx:id="butD" layoutX="545.0" layoutY="376.0" mnemonicParsing="false" onAction="#onActionHandleAns" prefHeight="62.0" prefWidth="54.0" text="D" />
+            <Label fx:id="quesText" layoutX="274.0" layoutY="130.0" prefHeight="90.0" prefWidth="258.0" text="QUESTION" />
+            <Button layoutX="74.0" layoutY="72.0" mnemonicParsing="false" onAction="#onActionHome" text="Home" />
+            <Button layoutX="261.0" layoutY="78.0" mnemonicParsing="false" onAction="#onActionBack" text="&lt;--" />
+            <Button layoutX="499.0" layoutY="78.0" mnemonicParsing="false" onAction="#onActionNext" text="--&gt;" />
+            <Pane layoutX="625.0" layoutY="41.0" prefHeight="134.0" prefWidth="154.0">
+               <children>
+                  <Label layoutX="53.0" layoutY="26.0" prefHeight="29.0" prefWidth="49.0" text="Score">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="scoreBoard" layoutX="30.0" layoutY="67.0" prefHeight="66.0" prefWidth="110.0" text="0 / 100">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
          </children>
       </AnchorPane>
    </center>
