@@ -1,0 +1,18 @@
+bike
+car
+van
+scooter
+rocket
+bus
+truck
+ambulance
+skateboard
+moped
+plane
+train
+helicopter
+escalator
+tractor
+motorbike
+boat
+fire engine

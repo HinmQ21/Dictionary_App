@@ -1,0 +1,16 @@
+policeman
+receptionist
+nurse
+graphic designer
+mechanic
+doctor
+artist
+computer technician
+dancer
+cashier
+firefighter
+hairdresser
+pilot
+driver
+carpenter
+scientist

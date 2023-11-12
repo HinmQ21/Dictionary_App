@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import Controller.Game_Controller.GameHM;
 
 import java.io.IOException;
 
@@ -11,6 +12,8 @@ public class GameController {
 
     @FXML
     AnchorPane gameContainer;
+
+    public GameHM game = new GameHM();
 
     private void showComponent(String path) {
         try {
@@ -26,7 +29,8 @@ public class GameController {
         showComponent("/fxml/QuizGame.fxml");
     }
 
-    public void onActionStartHangMan() {
-
+    public void onActionStartHangManGame() {
+        showComponent("/fxml/HangManGame.fxml");
+        game.getWords().clear();
     }
 }

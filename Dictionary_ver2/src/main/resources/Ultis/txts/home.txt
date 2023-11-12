@@ -1,0 +1,18 @@
+bed
+computer
+air conditioner
+mirror
+bin
+chair
+door
+picture
+fireplace
+stove
+sofa
+cupboard
+books
+cushion
+rug
+window
+shelves
+clock

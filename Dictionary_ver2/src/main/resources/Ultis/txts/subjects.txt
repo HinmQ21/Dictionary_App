@@ -1,0 +1,12 @@
+maths
+physical
+education
+music
+chemistry
+english
+geography
+computing
+art
+history
+physics
+biology
