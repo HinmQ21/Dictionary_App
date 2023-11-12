@@ -16,7 +16,7 @@
                </image>
             </ImageView>
             <Button layoutX="127.0" layoutY="167.0" mnemonicParsing="false" onAction="#onActionStartMulti" prefHeight="73.0" prefWidth="86.0" text="Multichoice" />
-            <Button layoutX="363.0" layoutY="174.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="86.0" text="Fill the blank" />
+            <Button layoutX="363.0" layoutY="174.0" mnemonicParsing="false" onAction="#onActionStartFill" prefHeight="73.0" prefWidth="86.0" text="Fill the blank" />
             <Button layoutX="581.0" layoutY="174.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="86.0" text=" Speaking " />
          </children>
       </AnchorPane>

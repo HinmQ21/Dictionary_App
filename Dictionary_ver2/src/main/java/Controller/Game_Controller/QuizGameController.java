@@ -25,4 +25,8 @@ public class QuizGameController {
         showComponent("/fxml/multichoiceGame.fxml");
     }
 
+    public void onActionStartFill() {
+        showComponent("/fxml/fillGame.fxml");
+    }
+
 }

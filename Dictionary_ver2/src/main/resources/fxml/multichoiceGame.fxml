@@ -55,7 +55,7 @@
                   <Button layoutX="188.0" layoutY="243.0" mnemonicParsing="false" onAction="#showAnswers" text="View answers" />
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="176.0" layoutY="445.0" prefHeight="107.0" prefWidth="462.0">
+            <AnchorPane fx:id="answerPane" layoutX="176.0" layoutY="445.0" prefHeight="107.0" prefWidth="462.0">
                <children>
                   <Label fx:id="C1" layoutX="28.0" layoutY="21.0" text="C1" />
                   <Label fx:id="C2" layoutX="114.0" layoutY="21.0" text="C2" />
