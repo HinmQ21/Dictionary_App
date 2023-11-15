@@ -133,9 +133,12 @@ public class SearchController implements Initializable {
     }
 
     public void onActionSpeak() {
+        String langCode = "";
         try {
             Word selectedWord = listWord.getSelectionModel().getSelectedItem();
-            DictionaryManagement.TextToSpeech(selectedWord.getWord_target(), "hl=en-us");
+            if (curTable.equals("av")) langCode = "en-us";
+            else langCode = "vi-vn";
+            DictionaryManagement.TextToSpeech(selectedWord.getWord_target(), "hl=" + langCode);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

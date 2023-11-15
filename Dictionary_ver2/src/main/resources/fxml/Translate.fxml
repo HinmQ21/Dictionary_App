@@ -83,7 +83,7 @@
                               <Insets top="8.0" />
                            </VBox.margin>
                         </Label>
-                        <TextArea fx:id="leftText" prefHeight="205.0" prefWidth="326.0" promptText="Word..." styleClass="input" stylesheets="@../Ultis/value/styles.css">
+                        <TextArea fx:id="leftText" prefHeight="205.0" prefWidth="326.0" promptText="Word..." styleClass="input" stylesheets="@../Ultis/value/styles.css" wrapText="true">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -123,7 +123,7 @@
                               <Insets top="8.0" />
                            </VBox.margin>
                         </Label>
-                        <TextArea fx:id="rightText" prefHeight="205.0" prefWidth="326.0" promptText="Mean..." styleClass="input" stylesheets="@../Ultis/value/styles.css">
+                        <TextArea fx:id="rightText" prefHeight="205.0" prefWidth="326.0" promptText="Mean..." styleClass="input" stylesheets="@../Ultis/value/styles.css" wrapText="true">
                            <font>
                               <Font size="14.0" />
                            </font>

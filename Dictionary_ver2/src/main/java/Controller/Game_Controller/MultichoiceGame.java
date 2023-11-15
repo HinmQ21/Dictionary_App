@@ -7,7 +7,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 
@@ -19,7 +18,7 @@ import java.net.URL;
 import java.util.Arrays;
 import java.util.ResourceBundle;
 
-public class MultichoiceGame implements Initializable{
+public class MultichoiceGame implements Initializable {
     @FXML
     private AnchorPane quizContainer;
 
@@ -46,7 +45,6 @@ public class MultichoiceGame implements Initializable{
 
     private int curQuestion, curScore;
 
-    private boolean[] done;
 
     public void onActionHome() {
         try {
@@ -77,9 +75,7 @@ public class MultichoiceGame implements Initializable{
     public void initialize(URL url, ResourceBundle resourceBundle) {
         curQuestion = 0;
         curScore = 0;
-        done = new boolean[10];
         displayQuestion(curQuestion);
-        Arrays.fill(done, false);
         resultPane.setVisible(false);
         answerPane.setVisible(false);
     }
@@ -98,11 +94,10 @@ public class MultichoiceGame implements Initializable{
         Button selectedButton = (Button) event.getSource();
         String selectedAnswer = selectedButton.getText();
 
-        if (selectedAnswer.equals(quesList[curQuestion].getCorrectAnswer()) && !done[curQuestion]) {
+        if (selectedAnswer.equals(quesList[curQuestion].getCorrectAnswer())) {
             curScore += 10;
         }
         scoreBoard.setText(curScore + "/100");
-        done[curQuestion] = true;
         if (curQuestion < 9) {
             curQuestion++;
         } else {

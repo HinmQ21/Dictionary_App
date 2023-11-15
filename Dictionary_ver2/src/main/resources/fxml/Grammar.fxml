@@ -91,7 +91,7 @@
                         </ImageView>
                      </graphic>
                   </Label>
-                  <TextArea fx:id="grammarDef" prefHeight="342.0" prefWidth="547.0" styleClass="definition-wrapper" stylesheets="@../Ultis/value/styles.css">
+                  <TextArea fx:id="grammarDef" prefHeight="342.0" prefWidth="547.0" styleClass="definition-wrapper" stylesheets="@../Ultis/value/styles.css" wrapText="true">
                      <VBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="4.0" />
                      </VBox.margin></TextArea>
