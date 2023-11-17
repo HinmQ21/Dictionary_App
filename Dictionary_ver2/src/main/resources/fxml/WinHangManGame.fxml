@@ -6,9 +6,9 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="558.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Game_Controller.WinHangManGame">
    <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="hangManContainer" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="playAgainWin" layoutX="370.0" layoutY="150.0" mnemonicParsing="false" onAction="#onActionPlayAgainWin" prefHeight="46.0" prefWidth="52.0" text="WIN" />
+            <Button fx:id="playAgain" layoutX="370.0" layoutY="150.0" mnemonicParsing="false" onAction="#onActionPlayAgain" prefHeight="46.0" prefWidth="52.0" text="WIN" />
          </children>
       </AnchorPane>
    </center>

@@ -12,6 +12,9 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="558.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AddController">
@@ -137,14 +140,41 @@
                            <Insets bottom="10.0" />
                         </VBox.margin>
                      </TextArea>
-                        <Pane prefHeight="51.0" prefWidth="494.0">
+                        <Pane prefHeight="63.0" prefWidth="494.0">
                            <children>
                            <Button layoutX="14.0" layoutY="7.0" mnemonicParsing="false" onAction="#onActionSave" prefHeight="3.0" prefWidth="14.0" styleClass="add-button" stylesheets="@../Ultis/value/styles.css" text="Thêm" textFill="WHITE">
                                  <tooltip>
                                     <Tooltip text="Thêm 1 từ vào từ vựng" />
                                  </tooltip>
                               </Button>
-                              <Label fx:id="addNotification" layoutX="134.0" layoutY="6.0" prefHeight="32.0" prefWidth="330.0" />
+                              <Label fx:id="addNotification" layoutX="131.0" prefHeight="58.0" prefWidth="348.0">
+                                 <textFill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="0.006729475100942127">
+                                             <color>
+                                                <Color green="0.6745098233222961" blue="0.9176470637321472" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color green="0.9372549057006836" blue="0.8196078538894653" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </textFill>
+                                 <font>
+                                    <Font name="Calibri Bold" size="18.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets bottom="9.0" top="3.0" />
+                                 </padding></Label>
                            </children>
                         </Pane>
                   </children>

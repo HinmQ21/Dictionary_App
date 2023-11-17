@@ -1,123 +1,134 @@
 package Controller.Game_Controller;
 
+//import Controller.Game_Controller.GameHM;
+import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.shape.Circle;
+import javafx.scene.shape.Line;
+import javafx.util.Duration;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class HangManGameController {
+public class HangManGameController implements Initializable {
     @FXML
-    AnchorPane hangManContainer;
+    private AnchorPane hangManContainer;
+    @FXML
+    private TextField keyWord;
+    @FXML
+    private Label lives;
+    @FXML
+    private Line base;
+    @FXML
+    private Line vertical;
+    @FXML
+    private Line  horizontal;
+    @FXML
+    private Line  upperCorner;
+    @FXML
+    private Line  bottomCorner;
+    @FXML
+    private Line holder;
+    @FXML
+    private Circle head;
+    @FXML
+    private Line leftArm;
+    @FXML
+    private Line rightArm;
+    @FXML
+    private Line body;
+    @FXML
+    private Line leftLeg;
+    @FXML
+    private Line rightLeg;
 
-    @FXML
-    private Button animals;
-    @FXML
-    private Button body;
-    @FXML
-    private Button clothes;
-    @FXML
-    private Button colors;
-    @FXML
-    private Button countries;
-    @FXML
-    private Button food;
-    @FXML
-    private Button home;
-    @FXML
-    private Button jobs;
-    @FXML
-    private Button movies;
-    @FXML
-    private Button music;
-    @FXML
-    private Button numbers;
-    @FXML
-    private Button personal;
-    @FXML
-    private Button sports;
-    @FXML
-    private Button subjects;
-    @FXML
-    private Button transport;
+    private GameHangMan gameHangMan;
 
-    public static GameHM game = new GameHM();
+    /*public AnchorPane getHangManContainer() {
+        return hangManContainer;
+    }
 
-    private void showComponent(String path) {
+    public void setHangManContainer(AnchorPane hangManContainer) {
+        this.hangManContainer = hangManContainer;
+    }
+*/
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        keyWord.setEditable(false);
+        keyWord.setText(String.copyValueOf(gameHangMan.getSecretWord()));
+        base.setVisible(true);
+        vertical.setVisible(true);
+        horizontal.setVisible(true);
+        upperCorner.setVisible(true);
+        bottomCorner.setVisible(true);
+        holder.setVisible(true);
+        head.setVisible(false);
+        leftArm.setVisible(false);
+        rightArm.setVisible(false);
+        body.setVisible(false);
+        leftLeg.setVisible(false);
+        rightLeg.setVisible(false);
+        gameHangMan = new GameHangMan();
+        gameHangMan.setHangManLives(6);
+        lives.setText("6");
+    }
+
+    // update images for hangman body parts
+    public void updateImage(int hangManLives){
+        if (hangManLives == 5 ){
+            head.setVisible(true);
+        }
+        if (hangManLives == 4){
+            body.setVisible(true);
+        }
+        if (hangManLives == 3) {
+            leftArm.setVisible(true);
+        }
+        if (hangManLives == 2) {
+            rightArm.setVisible(true);
+        }
+        if (hangManLives == 1) {
+            leftLeg.setVisible(true);
+        }
+        if (hangManLives == 0) {
+            rightLeg.setVisible(true);
+        }
+        lives.setText(String.valueOf(hangManLives));
+    }
+
+    public void onActionLetterClick(ActionEvent actionEvent) {
+        Button selectLetter = (Button) actionEvent.getSource();
+        String input = selectLetter.getId();
+        String newWord = gameHangMan.letterMatch(input.charAt(0));
+        keyWord.setText(newWord);
+        updateImage(gameHangMan.getHangManLives());
+
+        FadeTransition fadeTransition = new FadeTransition(Duration.seconds(0.5),selectLetter);
+        selectLetter.setOpacity(1);
+        fadeTransition.setToValue(0);
+        fadeTransition.play();
+
+        selectLetter.setDisable(true);
+    }
+
+    public void onActionHomeHangMan() {
         try {
-            BorderPane component = FXMLLoader.load(getClass().getResource(path));
+            BorderPane component = FXMLLoader.load(getClass().getResource("/fxml/MenuHangManGame.fxml"));
             hangManContainer.getChildren().clear();
             hangManContainer.getChildren().add(component);
         } catch (IOException e) {
             e.printStackTrace();
         }
+        gameHangMan.getWords().clear();
     }
 
-    public void onActionChooseGenre(ActionEvent actionEvent) {
-        if (actionEvent.getSource() == animals) {
-            game.readFiles("src/main/resources/Ultis/txts/animals.txt");
-            game.setRandomWord(game.chooseRandomWords());
-        }
-        else if (actionEvent.getSource() == body) {
-            game.readFiles("src/main/resources/Ultis/txts/body.txt");
-            game.setRandomWord(game.chooseRandomWords());
-        }
-        else if (actionEvent.getSource() == clothes) {
-            game.readFiles("src/main/resources/Ultis/txts/clothes.txt");
-            game.setRandomWord(game.chooseRandomWords());
-        }
-        else if (actionEvent.getSource() == colors) {
-            game.readFiles("src/main/resources/Ultis/txts/colors.txt");
-            game.setRandomWord(game.chooseRandomWords());
-        }
-        else if (actionEvent.getSource() == countries) {
-            game.readFiles("src/main/resources/Ultis/txts/countries.txt");
-            game.setRandomWord(game.chooseRandomWords());
-        }
-        else if (actionEvent.getSource() == food) {
-            game.readFiles("src/main/resources/Ultis/txts/food.txt");
-            game.setRandomWord(game.chooseRandomWords());
-        }
-        else if (actionEvent.getSource() == home) {
-            game.readFiles("src/main/resources/Ultis/txts/home.txt");
-            game.setRandomWord(game.chooseRandomWords());
-        }
-        else if (actionEvent.getSource() == jobs) {
-            game.readFiles("src/main/resources/Ultis/txts/jobs.txt");
-            game.setRandomWord(game.chooseRandomWords());
-        }
-        else if (actionEvent.getSource() == movies) {
-            game.readFiles("src/main/resources/Ultis/txts/movies.txt");
-            game.setRandomWord(game.chooseRandomWords());
-        }
-        else if (actionEvent.getSource() == music) {
-            game.readFiles("src/main/resources/Ultis/txts/music.txt");
-            game.setRandomWord(game.chooseRandomWords());
-        }
-        else if (actionEvent.getSource() == numbers) {
-            game.readFiles("src/main/resources/Ultis/txts/numbers.txt");
-            game.setRandomWord(game.chooseRandomWords());
-        }
-        else if (actionEvent.getSource() == personal) {
-            game.readFiles("src/main/resources/Ultis/txts/personal.txt");
-            game.setRandomWord(game.chooseRandomWords());
-        }
-        else if (actionEvent.getSource() == sports) {
-            game.readFiles("src/main/resources/Ultis/txts/sports.txt");
-            game.setRandomWord(game.chooseRandomWords());
-        }
-        else if (actionEvent.getSource() == subjects) {
-            game.readFiles("src/main/resources/Ultis/txts/subjects.txt");
-            game.setRandomWord(game.chooseRandomWords());
-        }
-        else if (actionEvent.getSource() == transport) {
-            game.readFiles("src/main/resources/Ultis/txts/transport.txt");
-            game.setRandomWord(game.chooseRandomWords());
-        }
-        System.out.println(game.getRandomWord());
-        showComponent("/fxml/HMGame.fxml");
-    }
 }

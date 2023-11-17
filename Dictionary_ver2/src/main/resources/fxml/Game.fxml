@@ -11,12 +11,12 @@
          <children>
             <AnchorPane fx:id="hangMan" onMouseClicked="#onActionStartHangManGame" prefHeight="558.0" prefWidth="390.0">
                <children>
-                  <Label layoutX="109.0" layoutY="60.0" text="HangMan" />
+                  <Label layoutX="155.0" layoutY="65.0" text="HangMan" />
                </children>
             </AnchorPane>
             <AnchorPane fx:id="quizGame" layoutX="390.0" onMouseClicked="#onActionStartQuizGame" prefHeight="558.0" prefWidth="390.0">
                <children>
-                  <Label layoutX="121.0" layoutY="58.0" text="Quiz Game" />
+                  <Label layoutX="165.0" layoutY="67.0" text="Quiz Game" />
                   <Line endX="296.9999694824219" endY="402.79998779296875" layoutX="-297.0" layoutY="83.0" startX="296.9999694824219" startY="1.9999938011169434" />
                </children>
             </AnchorPane>

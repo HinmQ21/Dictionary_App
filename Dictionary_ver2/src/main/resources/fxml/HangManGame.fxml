@@ -1,94 +1,704 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Game_Controller.HangManGameController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="558.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Game_Controller.HangManGameController">
    <center>
-      <AnchorPane fx:id="hangManContainer" prefHeight="558.0" prefWidth="780.0">
+      <AnchorPane fx:id="hangManContainer" prefHeight="558.0" prefWidth="780.0" BorderPane.alignment="CENTER">
          <children>
-            <Pane layoutX="69.0" layoutY="14.0" prefHeight="478.0" prefWidth="642.0">
+            <AnchorPane layoutX="14.0" layoutY="357.0" prefHeight="200.0" prefWidth="780.0">
                <children>
-                  <Button fx:id="movies" layoutX="50.0" layoutY="48.0" mnemonicParsing="false" onAction="#onActionChooseGenre" prefHeight="44.0" prefWidth="80.0" style="-fx-background-color: white; -fx-text-fill: blue; -fx-background-radius: 100; -fx-border-radius: 100; -fx-border-color: blue;" text="Movies">
+                  <Button fx:id="a" layoutX="87.0" layoutY="27.0" mnemonicParsing="false" onAction="#onActionLetterClick" prefHeight="20.0" prefWidth="40.0" stylesheets="@../Ultis/value/styles.css">
                      <font>
-                        <Font name="System Bold Italic" size="16.0" />
+                        <Font name="System Bold" size="17.0" />
                      </font>
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Ultis/icons/a.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="all_button" />
+                     </styleClass>
                   </Button>
-                  <Button fx:id="countries" layoutX="255.0" layoutY="44.0" mnemonicParsing="false" onAction="#onActionChooseGenre" prefHeight="44.0" prefWidth="97.0" style="-fx-background-color: white; -fx-text-fill: blue; -fx-background-radius: 100; -fx-border-radius: 100; -fx-border-color: blue;" text="Countries">
+                  <Button fx:id="b" layoutX="147.0" layoutY="27.0" mnemonicParsing="false" onAction="#onActionLetterClick" prefHeight="40.0" prefWidth="40.0" stylesheets="@../Ultis/value/styles.css">
                      <font>
-                        <Font name="System Bold Italic" size="16.0" />
+                        <Font name="System Bold" size="17.0" />
                      </font>
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="all_button" />
+                     </styleClass>
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Ultis/icons/b.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                   </Button>
-                  <Button fx:id="animals" layoutX="470.0" layoutY="41.0" mnemonicParsing="false" onAction="#onActionChooseGenre" prefHeight="44.0" prefWidth="88.0" style="-fx-background-color: white; -fx-text-fill: blue; -fx-background-radius: 100; -fx-border-radius: 100; -fx-border-color: blue;" text="Animals">
+                  <Button fx:id="c" layoutX="207.0" layoutY="27.0" mnemonicParsing="false" onAction="#onActionLetterClick" prefHeight="40.0" prefWidth="40.0" stylesheets="@../Ultis/value/styles.css">
                      <font>
-                        <Font name="System Bold Italic" size="16.0" />
+                        <Font name="System Bold" size="17.0" />
                      </font>
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="all_button" />
+                     </styleClass>
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Ultis/icons/c.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                   </Button>
-                  <Button fx:id="body" layoutX="50.0" layoutY="114.0" mnemonicParsing="false" onAction="#onActionChooseGenre" prefHeight="44.0" prefWidth="80.0" style="-fx-background-color: white; -fx-text-fill: blue; -fx-background-radius: 100; -fx-border-radius: 100; -fx-border-color: blue;" text="Body">
+                  <Button fx:id="d" layoutX="267.0" layoutY="27.0" mnemonicParsing="false" onAction="#onActionLetterClick" prefHeight="40.0" prefWidth="40.0" stylesheets="@../Ultis/value/styles.css">
                      <font>
-                        <Font name="System Bold Italic" size="16.0" />
+                        <Font name="System Bold" size="17.0" />
                      </font>
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="all_button" />
+                     </styleClass>
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Ultis/icons/d.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                   </Button>
-                  <Button fx:id="clothes" layoutX="255.0" layoutY="110.0" mnemonicParsing="false" onAction="#onActionChooseGenre" prefHeight="44.0" prefWidth="97.0" style="-fx-background-color: white; -fx-text-fill: blue; -fx-background-radius: 100; -fx-border-radius: 100; -fx-border-color: blue;" text="Clothes">
+                  <Button fx:id="e" layoutX="327.0" layoutY="27.0" mnemonicParsing="false" onAction="#onActionLetterClick" prefHeight="40.0" prefWidth="40.0" stylesheets="@../Ultis/value/styles.css">
                      <font>
-                        <Font name="System Bold Italic" size="16.0" />
+                        <Font name="System Bold" size="17.0" />
                      </font>
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="all_button" />
+                     </styleClass>
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Ultis/icons/e.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                   </Button>
-                  <Button fx:id="colors" layoutX="470.0" layoutY="107.0" mnemonicParsing="false" onAction="#onActionChooseGenre" prefHeight="44.0" prefWidth="88.0" style="-fx-background-color: white; -fx-text-fill: blue; -fx-background-radius: 100; -fx-border-radius: 100; -fx-border-color: blue;" text="Colors">
+                  <Button fx:id="f" layoutX="387.0" layoutY="27.0" mnemonicParsing="false" onAction="#onActionLetterClick" prefHeight="40.0" prefWidth="40.0" stylesheets="@../Ultis/value/styles.css">
                      <font>
-                        <Font name="System Bold Italic" size="16.0" />
+                        <Font name="System Bold" size="17.0" />
                      </font>
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="all_button" />
+                     </styleClass>
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Ultis/icons/a.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                   </Button>
-                  <Button fx:id="food" layoutX="53.0" layoutY="201.0" mnemonicParsing="false" onAction="#onActionChooseGenre" prefHeight="44.0" prefWidth="80.0" style="-fx-background-color: white; -fx-text-fill: blue; -fx-background-radius: 100; -fx-border-radius: 100; -fx-border-color: blue;" text="Food">
+                  <Button fx:id="g" layoutX="447.0" layoutY="27.0" mnemonicParsing="false" onAction="#onActionLetterClick" prefHeight="40.0" prefWidth="40.0" stylesheets="@../Ultis/value/styles.css">
                      <font>
-                        <Font name="System Bold Italic" size="16.0" />
+                        <Font name="System Bold" size="17.0" />
                      </font>
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="all_button" />
+                     </styleClass>
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Ultis/icons/g.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                   </Button>
-                  <Button fx:id="home" layoutX="258.0" layoutY="197.0" mnemonicParsing="false" onAction="#onActionChooseGenre" prefHeight="44.0" prefWidth="97.0" style="-fx-background-color: white; -fx-text-fill: blue; -fx-background-radius: 100; -fx-border-radius: 100; -fx-border-color: blue;" text="Home">
+                  <Button fx:id="h" layoutX="507.0" layoutY="27.0" mnemonicParsing="false" onAction="#onActionLetterClick" prefHeight="40.0" prefWidth="40.0" stylesheets="@../Ultis/value/styles.css">
                      <font>
-                        <Font name="System Bold Italic" size="16.0" />
+                        <Font name="System Bold" size="17.0" />
                      </font>
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="all_button" />
+                     </styleClass>
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Ultis/icons/h.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                   </Button>
-                  <Button fx:id="jobs" layoutX="473.0" layoutY="194.0" mnemonicParsing="false" onAction="#onActionChooseGenre" prefHeight="44.0" prefWidth="88.0" style="-fx-background-color: white; -fx-text-fill: blue; -fx-background-radius: 100; -fx-border-radius: 100; -fx-border-color: blue;" text="Jobs">
+                  <Button fx:id="i" layoutX="567.0" layoutY="27.0" mnemonicParsing="false" onAction="#onActionLetterClick" prefHeight="40.0" prefWidth="40.0" stylesheets="@../Ultis/value/styles.css">
                      <font>
-                        <Font name="System Bold Italic" size="16.0" />
+                        <Font name="System Bold" size="17.0" />
                      </font>
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="all_button" />
+                     </styleClass>
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Ultis/icons/i.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                   </Button>
-                  <Button fx:id="music" layoutX="55.0" layoutY="294.0" mnemonicParsing="false" onAction="#onActionChooseGenre" style="-fx-background-color: white; -fx-text-fill: blue; -fx-background-radius: 100; -fx-border-radius: 100; -fx-border-color: blue;" text="Music">
+                  <Button fx:id="j" layoutX="627.0" layoutY="27.0" mnemonicParsing="false" onAction="#onActionLetterClick" prefHeight="40.0" prefWidth="40.0" stylesheets="@../Ultis/value/styles.css">
                      <font>
-                        <Font name="System Bold Italic" size="16.0" />
+                        <Font name="System Bold" size="17.0" />
                      </font>
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="all_button" />
+                     </styleClass>
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Ultis/icons/j.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                   </Button>
-                  <Button fx:id="numbers" layoutX="260.0" layoutY="290.0" mnemonicParsing="false" onAction="#onActionChooseGenre" prefHeight="44.0" prefWidth="97.0" style="-fx-background-color: white; -fx-text-fill: blue; -fx-background-radius: 100; -fx-border-radius: 100; -fx-border-color: blue;" text="Numbers">
+                  <Button fx:id="k" layoutX="87.0" layoutY="80.0" mnemonicParsing="false" onAction="#onActionLetterClick" prefHeight="40.0" prefWidth="40.0" stylesheets="@../Ultis/value/styles.css">
                      <font>
-                        <Font name="System Bold Italic" size="16.0" />
+                        <Font name="System Bold" size="17.0" />
                      </font>
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="all_button" />
+                     </styleClass>
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Ultis/icons/k.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                   </Button>
-                  <Button fx:id="personal" layoutX="475.0" layoutY="287.0" mnemonicParsing="false" onAction="#onActionChooseGenre" prefHeight="44.0" prefWidth="98.0" style="-fx-background-color: white; -fx-text-fill: blue; -fx-background-radius: 100; -fx-border-radius: 100; -fx-border-color: blue;" text="Personal">
+                  <Button fx:id="l" layoutX="146.0" layoutY="80.0" mnemonicParsing="false" onAction="#onActionLetterClick" prefHeight="40.0" prefWidth="40.0" stylesheets="@../Ultis/value/styles.css">
                      <font>
-                        <Font name="System Bold Italic" size="16.0" />
+                        <Font name="System Bold" size="17.0" />
                      </font>
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="all_button" />
+                     </styleClass>
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Ultis/icons/l.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                   </Button>
-                  <Button fx:id="sports" layoutX="55.0" layoutY="371.0" mnemonicParsing="false" onAction="#onActionChooseGenre" prefHeight="44.0" prefWidth="80.0" style="-fx-background-color: white; -fx-text-fill: blue; -fx-background-radius: 100; -fx-border-radius: 100; -fx-border-color: blue;" text="Sports">
+                  <Button fx:id="m" layoutX="207.0" layoutY="80.0" mnemonicParsing="false" onAction="#onActionLetterClick" prefHeight="40.0" prefWidth="40.0" stylesheets="@../Ultis/value/styles.css">
                      <font>
-                        <Font name="System Bold Italic" size="16.0" />
+                        <Font name="System Bold" size="17.0" />
                      </font>
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="all_button" />
+                     </styleClass>
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Ultis/icons/m.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                   </Button>
-                  <Button fx:id="subjects" layoutX="260.0" layoutY="367.0" mnemonicParsing="false" onAction="#onActionChooseGenre" prefHeight="44.0" prefWidth="97.0" style="-fx-background-color: white; -fx-text-fill: blue; -fx-background-radius: 100; -fx-border-radius: 100; -fx-border-color: blue;" text="Subjects">
+                  <Button fx:id="n" layoutX="267.0" layoutY="80.0" mnemonicParsing="false" onAction="#onActionLetterClick" prefHeight="40.0" prefWidth="40.0" stylesheets="@../Ultis/value/styles.css">
                      <font>
-                        <Font name="System Bold Italic" size="16.0" />
+                        <Font name="System Bold" size="17.0" />
                      </font>
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="all_button" />
+                     </styleClass>
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Ultis/icons/n.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                   </Button>
-                  <Button fx:id="transport" layoutX="475.0" layoutY="364.0" mnemonicParsing="false" onAction="#onActionChooseGenre" prefHeight="44.0" prefWidth="105.0" style="-fx-background-color: white; -fx-text-fill: blue; -fx-background-radius: 100; -fx-border-radius: 100; -fx-border-color: blue;" text="Transport">
+                  <Button fx:id="o" layoutX="327.0" layoutY="80.0" mnemonicParsing="false" onAction="#onActionLetterClick" prefHeight="40.0" prefWidth="40.0" stylesheets="@../Ultis/value/styles.css">
                      <font>
-                        <Font name="System Bold Italic" size="16.0" />
+                        <Font name="System Bold" size="17.0" />
                      </font>
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="all_button" />
+                     </styleClass>
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Ultis/icons/o.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="p" layoutX="387.0" layoutY="80.0" mnemonicParsing="false" onAction="#onActionLetterClick" prefHeight="40.0" prefWidth="40.0" stylesheets="@../Ultis/value/styles.css">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="all_button" />
+                     </styleClass>
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Ultis/icons/p.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="q" layoutX="447.0" layoutY="80.0" mnemonicParsing="false" onAction="#onActionLetterClick" prefHeight="40.0" prefWidth="40.0" stylesheets="@../Ultis/value/styles.css">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="all_button" />
+                     </styleClass>
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Ultis/icons/q.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="r" layoutX="507.0" layoutY="80.0" mnemonicParsing="false" onAction="#onActionLetterClick" prefHeight="40.0" prefWidth="40.0" stylesheets="@../Ultis/value/styles.css">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="all_button" />
+                     </styleClass>
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Ultis/icons/r.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="s" layoutX="567.0" layoutY="80.0" mnemonicParsing="false" onAction="#onActionLetterClick" prefHeight="40.0" prefWidth="40.0" stylesheets="@../Ultis/value/styles.css">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="all_button" />
+                     </styleClass>
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Ultis/icons/s.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="t" layoutX="627.0" layoutY="80.0" mnemonicParsing="false" onAction="#onActionLetterClick" prefHeight="40.0" prefWidth="40.0" stylesheets="@../Ultis/value/styles.css">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="all_button" />
+                     </styleClass>
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Ultis/icons/t.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="u" layoutX="207.0" layoutY="135.0" mnemonicParsing="false" onAction="#onActionLetterClick" prefHeight="40.0" prefWidth="40.0" stylesheets="@../Ultis/value/styles.css">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="all_button" />
+                     </styleClass>
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Ultis/icons/u.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="v" layoutX="267.0" layoutY="135.0" mnemonicParsing="false" onAction="#onActionLetterClick" prefHeight="40.0" prefWidth="40.0" stylesheets="@../Ultis/value/styles.css">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="all_button" />
+                     </styleClass>
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Ultis/icons/v.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="w" layoutX="327.0" layoutY="135.0" mnemonicParsing="false" onAction="#onActionLetterClick" prefHeight="40.0" prefWidth="40.0" stylesheets="@../Ultis/value/styles.css">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="all_button" />
+                     </styleClass>
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Ultis/icons/w.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button layoutX="387.0" layoutY="135.0" mnemonicParsing="false" onAction="#onActionLetterClick" prefHeight="40.0" prefWidth="40.0" stylesheets="@../Ultis/value/styles.css" fx:id="x">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="all_button" />
+                     </styleClass>
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Ultis/icons/x.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="y" layoutX="447.0" layoutY="135.0" mnemonicParsing="false" onAction="#onActionLetterClick" prefHeight="40.0" prefWidth="40.0" stylesheets="@../Ultis/value/styles.css">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="all_button" />
+                     </styleClass>
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Ultis/icons/y.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="z" layoutX="507.0" layoutY="135.0" mnemonicParsing="false" onAction="#onActionLetterClick" prefHeight="40.0" prefWidth="40.0" stylesheets="@../Ultis/value/styles.css">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="all_button" />
+                     </styleClass>
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Ultis/icons/z.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                   </Button>
                </children>
-            </Pane>
+            </AnchorPane>
+            <AnchorPane layoutX="190.0" layoutY="132.0" prefHeight="232.0" prefWidth="353.0">
+               <children>
+                  <Line fx:id="vertical" endX="376.0000305175781" endY="89.00000762939453" layoutX="-229.0" layoutY="-80.0" startX="376.0000305175781" startY="304.0" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeWidth="10.0">
+                     <stroke>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color green="0.6745098233222961" blue="0.9176470637321472" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color green="0.9372549057006836" blue="0.8196078538894653" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </RadialGradient>
+                     </stroke></Line>
+                  <Line fx:id="base" endX="580.5999755859375" endY="300.0" layoutX="-278.0" layoutY="-74.0" startX="382.7999572753906" startY="300.0" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeWidth="10.0">
+                     <stroke>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color green="0.6745098233222961" blue="0.9176470637321472" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color green="0.9372549057006836" blue="0.8196078538894653" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </RadialGradient>
+                     </stroke>
+                  </Line>
+                  <Line fx:id="horizontal" endX="495.8000183105469" endY="300.0" layoutX="-230.0" layoutY="-296.0" startX="377.0" startY="300.0" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeWidth="10.0">
+                     <stroke>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color green="0.6745098233222961" blue="0.9176470637321472" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color green="0.9372549057006836" blue="0.8196078538894653" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </RadialGradient>
+                     </stroke></Line>
+                  <Line fx:id="holder" endX="377.0000305175781" endY="310.39996337890625" fill="#00aee8" layoutX="-111.0" layoutY="-284.0" startX="377.0" startY="293.0" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeWidth="10.0">
+                     <stroke>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color green="0.6745098233222961" blue="0.9176470637321472" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color green="0.6745098233222961" blue="0.9176470637321472" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </stroke></Line>
+                  <Circle fx:id="head" fill="#fdfeff" layoutX="266.0" layoutY="44.0" radius="19.0" strokeType="INSIDE" strokeWidth="7.0">
+                     <stroke>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color green="0.6745098233222961" blue="0.9176470637321472" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.9973082099596231">
+                                 <color>
+                                    <Color green="0.6745098233222961" blue="0.9176470637321472" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color green="0.6745098233222961" blue="0.9176470637321472" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </stroke></Circle>
+                  <Line fx:id="body" endX="377.0" endY="152.0" layoutX="-111.0" layoutY="-90.0" startX="377.0000305175781" startY="235.5999755859375" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeWidth="10.0">
+                     <stroke>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color green="0.6745098233222961" blue="0.9176470637321472" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color green="0.6745098233222961" blue="0.9176470637321472" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </stroke></Line>
+                  <Line fx:id="rightArm" endX="377.0" endY="152.0" layoutX="-109.0" layoutY="-84.0" startX="414.0000305175781" startY="180.79995727539062" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeWidth="10.0">
+                     <stroke>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color green="0.6745098233222961" blue="0.9176470637321472" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color green="0.6745098233222961" blue="0.9176470637321472" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </stroke></Line>
+                  <Line fx:id="rightLeg" endX="377.0" endY="152.0" layoutX="-109.0" layoutY="-6.0" startX="415.0" startY="184.0" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeWidth="10.0">
+                     <stroke>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color green="0.6745098233222961" blue="0.9176470637321472" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color green="0.6745098233222961" blue="0.9176470637321472" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </stroke></Line>
+                  <Line fx:id="leftArm" endX="377.0" endY="152.0" layoutX="-114.0" layoutY="-84.0" startX="342.1999816894531" startY="179.99996948242188" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeWidth="10.0">
+                     <stroke>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color green="0.6745098233222961" blue="0.9176470637321472" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color green="0.6745098233222961" blue="0.9176470637321472" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </stroke></Line>
+                  <Line fx:id="leftLeg" endX="378.0" endY="209.0" layoutX="-147.0" layoutY="-31.0" startX="411.0" startY="177.0" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeWidth="10.0">
+                     <stroke>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color green="0.6745098233222961" blue="0.9176470637321472" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color green="0.6745098233222961" blue="0.9176470637321472" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </stroke></Line>
+                  <Line fx:id="upperCorner" endX="-77.39999389648438" endY="-21.99999237060547" layoutX="252.0" layoutY="31.0" startX="-99.99996948242188" startY="8.199981689453125" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeWidth="10.0">
+                     <stroke>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color green="0.6745098233222961" blue="0.9176470637321472" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color green="0.6745098233222961" blue="0.9176470637321472" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </stroke>
+                  </Line>
+                  <Line fx:id="bottomCorner" endX="-77.39999389648438" endY="-21.99999237060547" layoutX="229.0" layoutY="208.0" startX="-55.999969482421875" startY="13.0" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeWidth="10.0">
+                     <stroke>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color green="0.6745098233222961" blue="0.9176470637321472" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color green="0.6745098233222961" blue="0.9176470637321472" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </stroke>
+                  </Line>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="2.0" prefHeight="118.0" prefWidth="780.0">
+               <children>
+                  <TextField fx:id="keyWord" layoutX="21.0" layoutY="14.0" prefHeight="87.0" prefWidth="630.0" styleClass="input_hangman_game" stylesheets="@../Ultis/value/styles.css">
+                     <font>
+                        <Font name="Calibri Bold" size="45.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="674.0" layoutY="59.0" prefHeight="35.0" prefWidth="35.0" stylesheets="@../Ultis/value/styles.css" textFill="#1c1fd3">
+                     <font>
+                        <Font name="Century Schoolbook Bold" size="19.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Ultis/icons/icons8-heart-96.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <styleClass>
+                        <String fx:value="all_button" />
+                        <String fx:value="transparent" />
+                     </styleClass>
+                  </Label>
+                  <Label fx:id="lives" layoutX="723.0" layoutY="51.0" prefHeight="52.0" prefWidth="19.0" styleClass="color_hangman" stylesheets="@../Ultis/value/styles.css" text="6" textFill="#1b1919">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="674.0" layoutY="14.0" mnemonicParsing="false" onAction="#onActionHomeHangMan" stylesheets="@../Ultis/value/styles.css">
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Ultis/icons/Home.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <styleClass>
+                        <String fx:value="all_button" />
+                        <String fx:value="transparent" />
+                     </styleClass>
+                  </Button>
+               </children>
+            </AnchorPane>
          </children>
       </AnchorPane>
    </center>
