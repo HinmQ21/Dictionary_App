@@ -18,9 +18,14 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="558.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Game_Controller.MultichoiceGame">
    <right>
-      <AnchorPane fx:id="quizContainer" prefHeight="558.0" prefWidth="780.0" BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="quizContainer" prefHeight="558.0" prefWidth="838.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="butA" layoutX="195.0" layoutY="224.0" mnemonicParsing="false" onAction="#onActionHandleAns" prefHeight="60.0" prefWidth="120.0" styleClass="select-button" stylesheets="@../Ultis/value/styles.css" text="A" textFill="WHITE">
+            <ImageView fitHeight="520.0" fitWidth="814.0" layoutX="41.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Ultis/images/SL-120622-54360-19.jpg" />
+               </image>
+            </ImageView>
+            <Button fx:id="butA" layoutX="175.0" layoutY="249.0" mnemonicParsing="false" onAction="#onActionHandleAns" prefHeight="60.0" prefWidth="240.0" styleClass="select-button" stylesheets="@../Ultis/value/styles.css" text="A" textFill="WHITE">
                <tooltip>
                   <Tooltip text="Thêm 1 từ vào từ vựng" />
                </tooltip>
@@ -28,7 +33,7 @@
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button fx:id="butB" layoutX="493.0" layoutY="224.0" mnemonicParsing="false" onAction="#onActionHandleAns" prefHeight="60.0" prefWidth="120.0" styleClass="select-button" stylesheets="@../Ultis/value/styles.css" text="B" textFill="WHITE">
+            <Button fx:id="butB" layoutX="438.0" layoutY="249.0" mnemonicParsing="false" onAction="#onActionHandleAns" prefHeight="60.0" prefWidth="240.0" styleClass="select-button" stylesheets="@../Ultis/value/styles.css" text="B" textFill="WHITE">
                <tooltip>
                   <Tooltip text="Thêm 1 từ vào từ vựng" />
                </tooltip>
@@ -36,7 +41,7 @@
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button fx:id="butC" layoutX="195.0" layoutY="337.0" mnemonicParsing="false" onAction="#onActionHandleAns" prefHeight="60.0" prefWidth="120.0" styleClass="select-button" stylesheets="@../Ultis/value/styles.css" text="C" textFill="WHITE">
+            <Button fx:id="butC" layoutX="175.0" layoutY="324.0" mnemonicParsing="false" onAction="#onActionHandleAns" prefHeight="60.0" prefWidth="240.0" styleClass="select-button" stylesheets="@../Ultis/value/styles.css" text="C" textFill="WHITE">
                <tooltip>
                   <Tooltip text="Thêm 1 từ vào từ vựng" />
                </tooltip>
@@ -44,7 +49,7 @@
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button fx:id="butD" layoutX="493.0" layoutY="337.0" mnemonicParsing="false" onAction="#onActionHandleAns" prefHeight="60.0" prefWidth="120.0" styleClass="select-button" stylesheets="@../Ultis/value/styles.css" text="D" textFill="WHITE">
+            <Button fx:id="butD" layoutX="438.0" layoutY="324.0" mnemonicParsing="false" onAction="#onActionHandleAns" prefHeight="60.0" prefWidth="240.0" styleClass="select-button" stylesheets="@../Ultis/value/styles.css" text="D" textFill="WHITE">
                <tooltip>
                   <Tooltip text="Thêm 1 từ vào từ vựng" />
                </tooltip>
@@ -52,18 +57,28 @@
                   <Font size="18.0" />
                </font>
             </Button>
-            <Label fx:id="quesNum" layoutX="314.0" layoutY="31.0" text="Question 1 / 10 :">
+            <Label fx:id="quesNum" layoutX="329.0" layoutY="1.0" prefHeight="30.0" prefWidth="195.0" text="Question 1 / 10 :">
                <textFill>
                   <LinearGradient endX="1.0" endY="1.0">
                      <stops>
                         <Stop>
                            <color>
-                              <Color red="0.0117647061124444" green="0.5490196347236633" blue="0.7254902124404907" />
+                              <Color red="0.0470588244497776" green="0.5921568870544434" blue="0.7568627595901489" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.9973082099596231">
+                           <color>
+                              <Color red="0.0313725508749485" green="0.7568627595901489" blue="0.6470588445663452" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.9973082099596231">
+                           <color>
+                              <Color red="0.0470588244497776" green="0.5921568870544434" blue="0.7568627595901489" />
                            </color>
                         </Stop>
                         <Stop offset="1.0">
                            <color>
-                              <Color red="0.007843137718737125" green="0.8117647171020508" blue="0.7019608020782471" />
+                              <Color red="0.0313725508749485" green="0.7568627595901489" blue="0.6470588445663452" />
                            </color>
                         </Stop>
                      </stops>
@@ -72,7 +87,7 @@
                <font>
                   <Font size="26.0" />
                </font></Label>
-            <Label fx:id="quesText" layoutX="260.0" layoutY="92.0" prefHeight="91.0" prefWidth="284.0" styleClass="question" stylesheets="@../Ultis/value/styles.css" text="QUESTION" wrapText="true">
+            <Label fx:id="quesText" layoutX="206.0" layoutY="143.0" prefHeight="80.0" prefWidth="442.0" styleClass="question" stylesheets="@../Ultis/value/styles.css" text="QUESTION" wrapText="true">
                <font>
                   <Font size="20.0" />
                </font>
@@ -95,9 +110,9 @@
                <padding>
                   <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
                </padding></Label>
-            <Pane layoutX="613.0" layoutY="38.0" prefHeight="79.0" prefWidth="154.0">
+            <Pane layoutX="667.0" layoutY="13.0" prefHeight="79.0" prefWidth="146.0">
                <children>
-                  <Label layoutX="53.0" layoutY="-7.0" prefHeight="35.0" prefWidth="65.0" text="Score">
+                  <Label layoutX="53.0" layoutY="-7.0" prefHeight="35.0" prefWidth="60.0" text="Score">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -111,19 +126,24 @@
                               </Stop>
                               <Stop offset="0.006729475100942127">
                                  <color>
-                                    <Color red="0.0117647061124444" green="0.5490196347236633" blue="0.7254902124404907" />
+                                    <Color red="0.0470588244497776" green="0.5921568870544434" blue="0.7568627595901489" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.9973082099596231">
+                                 <color>
+                                    <Color red="0.0313725508749485" green="0.7568627595901489" blue="0.6470588445663452" />
                                  </color>
                               </Stop>
                               <Stop offset="1.0">
                                  <color>
-                                    <Color red="0.007843137718737125" green="0.8117647171020508" blue="0.7019608020782471" />
+                                    <Color red="0.0313725508749485" green="0.7568627595901489" blue="0.6470588445663452" />
                                  </color>
                               </Stop>
                            </stops>
                         </LinearGradient>
                      </textFill>
                   </Label>
-                  <Label fx:id="scoreBoard" layoutX="37.0" layoutY="14.0" prefHeight="66.0" prefWidth="110.0" text="0 / 100">
+                  <Label fx:id="scoreBoard" layoutX="43.0" layoutY="28.0" prefHeight="37.0" prefWidth="92.0" text="0 / 100">
                      <font>
                         <Font size="29.0" />
                      </font>
@@ -140,6 +160,11 @@
                                     <Color red="0.0117647061124444" green="0.5490196347236633" blue="0.7254902124404907" />
                                  </color>
                               </Stop>
+                              <Stop offset="0.006729475100942127">
+                                 <color>
+                                    <Color red="0.0470588244497776" green="0.5921568870544434" blue="0.7568627595901489" />
+                                 </color>
+                              </Stop>
                               <Stop offset="0.9973082099596231">
                                  <color>
                                     <Color red="0.007843137718737125" green="0.8117647171020508" blue="0.7019608020782471" />
@@ -147,7 +172,7 @@
                               </Stop>
                               <Stop offset="1.0">
                                  <color>
-                                    <Color red="0.007843137718737125" green="0.8117647171020508" blue="0.7019608020782471" />
+                                    <Color red="0.0313725508749485" green="0.7568627595901489" blue="0.6470588445663452" />
                                  </color>
                               </Stop>
                            </stops>
@@ -156,44 +181,7 @@
                   </Label>
                </children>
             </Pane>
-            <AnchorPane fx:id="resultPane" layoutX="134.0" layoutY="92.0" prefHeight="350.0" prefWidth="511.0">
-               <children>
-                  <Pane layoutX="46.0" layoutY="108.0" prefHeight="198.0" prefWidth="448.0" stylesheets="@../Ultis/value/styles.css">
-                     <children>
-                        <Label fx:id="resLabel" prefHeight="63.0" prefWidth="449.0" text="Notification" wrapText="true">
-                           <font>
-                              <Font size="26.0" />
-                           </font>
-                           <padding>
-                              <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
-                           </padding>
-                        </Label>
-                        <Label fx:id="resComment" layoutY="62.0" prefHeight="138.0" prefWidth="448.0" text="Comment" wrapText="true">
-                           <font>
-                              <Font size="21.0" />
-                           </font>
-                           <padding>
-                              <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
-                           </padding>
-                        </Label>
-                        <Line endX="347.0" endY="-4.0" layoutX="101.0" layoutY="63.0" startX="-100.0" />
-                     </children>
-                     <styleClass>
-                        <String fx:value="input" />
-                        <String fx:value="root_info" />
-                     </styleClass>
-                  </Pane>
-                  <Button layoutX="218.0" layoutY="321.0" mnemonicParsing="false" onAction="#showAnswers" prefHeight="30.0" prefWidth="105.0" styleClass="select-button" stylesheets="@../Ultis/value/styles.css" text="View answers" textFill="WHITE">
-                     <tooltip>
-                        <Tooltip text="Xem kết quả" />
-                     </tooltip>
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Button>
-               </children>
-            </AnchorPane>
-            <AnchorPane fx:id="answerPane" layoutX="180.0" layoutY="452.0" prefHeight="86.0" prefWidth="443.0" styleClass="input" stylesheets="@../Ultis/value/styles.css">
+            <AnchorPane fx:id="answerPane" layoutX="216.0" layoutY="472.0" prefHeight="78.0" prefWidth="439.0" styleClass="input" stylesheets="@../Ultis/value/styles.css">
                <children>
                   <Label fx:id="C1" layoutX="28.0" layoutY="15.0" text="C1">
                      <textFill>
@@ -201,12 +189,17 @@
                            <stops>
                               <Stop>
                                  <color>
-                                    <Color green="0.6745098233222961" blue="0.9176470637321472" />
+                                    <Color red="0.0117647061124444" green="0.5490196347236633" blue="0.7254902124404907" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.006729475100942127">
+                                 <color>
+                                    <Color red="0.0470588244497776" green="0.5921568870544434" blue="0.7568627595901489" />
                                  </color>
                               </Stop>
                               <Stop offset="1.0">
                                  <color>
-                                    <Color green="0.9372549057006836" blue="0.8196078538894653" />
+                                    <Color red="0.0313725508749485" green="0.7568627595901489" blue="0.6470588445663452" />
                                  </color>
                               </Stop>
                            </stops>
@@ -221,12 +214,12 @@
                            <stops>
                               <Stop>
                                  <color>
-                                    <Color green="0.6745098233222961" blue="0.9176470637321472" />
+                                    <Color red="0.0470588244497776" green="0.5921568870544434" blue="0.7568627595901489" />
                                  </color>
                               </Stop>
                               <Stop offset="1.0">
                                  <color>
-                                    <Color green="0.9372549057006836" blue="0.8196078538894653" />
+                                    <Color red="0.0313725508749485" green="0.7568627595901489" blue="0.6470588445663452" />
                                  </color>
                               </Stop>
                            </stops>
@@ -241,12 +234,12 @@
                            <stops>
                               <Stop>
                                  <color>
-                                    <Color green="0.6745098233222961" blue="0.9176470637321472" />
+                                    <Color red="0.0470588244497776" green="0.5921568870544434" blue="0.7568627595901489" />
                                  </color>
                               </Stop>
                               <Stop offset="1.0">
                                  <color>
-                                    <Color green="0.9372549057006836" blue="0.8196078538894653" />
+                                    <Color red="0.0313725508749485" green="0.7568627595901489" blue="0.6470588445663452" />
                                  </color>
                               </Stop>
                            </stops>
@@ -261,12 +254,12 @@
                            <stops>
                               <Stop>
                                  <color>
-                                    <Color green="0.6745098233222961" blue="0.9176470637321472" />
+                                    <Color red="0.0470588244497776" green="0.5921568870544434" blue="0.7568627595901489" />
                                  </color>
                               </Stop>
                               <Stop offset="1.0">
                                  <color>
-                                    <Color green="0.9372549057006836" blue="0.8196078538894653" />
+                                    <Color red="0.0313725508749485" green="0.7568627595901489" blue="0.6470588445663452" />
                                  </color>
                               </Stop>
                            </stops>
@@ -281,12 +274,12 @@
                            <stops>
                               <Stop>
                                  <color>
-                                    <Color green="0.6745098233222961" blue="0.9176470637321472" />
+                                    <Color red="0.0470588244497776" green="0.5921568870544434" blue="0.7568627595901489" />
                                  </color>
                               </Stop>
                               <Stop offset="1.0">
                                  <color>
-                                    <Color green="0.9372549057006836" blue="0.8196078538894653" />
+                                    <Color red="0.0313725508749485" green="0.7568627595901489" blue="0.6470588445663452" />
                                  </color>
                               </Stop>
                            </stops>
@@ -301,12 +294,12 @@
                            <stops>
                               <Stop>
                                  <color>
-                                    <Color green="0.6745098233222961" blue="0.9176470637321472" />
+                                    <Color red="0.0470588244497776" green="0.5921568870544434" blue="0.7568627595901489" />
                                  </color>
                               </Stop>
                               <Stop offset="1.0">
                                  <color>
-                                    <Color green="0.9372549057006836" blue="0.8196078538894653" />
+                                    <Color red="0.0313725508749485" green="0.7568627595901489" blue="0.6470588445663452" />
                                  </color>
                               </Stop>
                            </stops>
@@ -321,12 +314,17 @@
                            <stops>
                               <Stop>
                                  <color>
-                                    <Color green="0.6745098233222961" blue="0.9176470637321472" />
+                                    <Color red="0.0470588244497776" green="0.5921568870544434" blue="0.7568627595901489" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.006729475100942127">
+                                 <color>
+                                    <Color red="0.0470588244497776" green="0.5921568870544434" blue="0.7568627595901489" />
                                  </color>
                               </Stop>
                               <Stop offset="1.0">
                                  <color>
-                                    <Color green="0.9372549057006836" blue="0.8196078538894653" />
+                                    <Color red="0.0313725508749485" green="0.7568627595901489" blue="0.6470588445663452" />
                                  </color>
                               </Stop>
                            </stops>
@@ -341,12 +339,12 @@
                            <stops>
                               <Stop>
                                  <color>
-                                    <Color green="0.6745098233222961" blue="0.9176470637321472" />
+                                    <Color red="0.0470588244497776" green="0.5921568870544434" blue="0.7568627595901489" />
                                  </color>
                               </Stop>
                               <Stop offset="1.0">
                                  <color>
-                                    <Color green="0.9372549057006836" blue="0.8196078538894653" />
+                                    <Color red="0.0313725508749485" green="0.7568627595901489" blue="0.6470588445663452" />
                                  </color>
                               </Stop>
                            </stops>
@@ -361,12 +359,12 @@
                            <stops>
                               <Stop>
                                  <color>
-                                    <Color green="0.6745098233222961" blue="0.9176470637321472" />
+                                    <Color red="0.0470588244497776" green="0.5921568870544434" blue="0.7568627595901489" />
                                  </color>
                               </Stop>
                               <Stop offset="1.0">
                                  <color>
-                                    <Color green="0.9372549057006836" blue="0.8196078538894653" />
+                                    <Color red="0.0313725508749485" green="0.7568627595901489" blue="0.6470588445663452" />
                                  </color>
                               </Stop>
                            </stops>
@@ -381,12 +379,12 @@
                            <stops>
                               <Stop>
                                  <color>
-                                    <Color green="0.6745098233222961" blue="0.9176470637321472" />
+                                    <Color red="0.0470588244497776" green="0.5921568870544434" blue="0.7568627595901489" />
                                  </color>
                               </Stop>
                               <Stop offset="1.0">
                                  <color>
-                                    <Color green="0.9372549057006836" blue="0.8196078538894653" />
+                                    <Color red="0.0313725508749485" green="0.7568627595901489" blue="0.6470588445663452" />
                                  </color>
                               </Stop>
                            </stops>
@@ -397,7 +395,7 @@
                      </font></Label>
                </children>
             </AnchorPane>
-            <Button layoutX="25.0" layoutY="23.0" mnemonicParsing="false" onAction="#onActionHome" prefHeight="45.0" prefWidth="45.0" styleClass="select-button" stylesheets="@../Ultis/value/styles.css">
+            <Button layoutX="54.0" layoutY="13.0" mnemonicParsing="false" onAction="#onActionHome" prefHeight="45.0" prefWidth="45.0" styleClass="select-button" stylesheets="@../Ultis/value/styles.css">
                <graphic>
                   <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -406,6 +404,43 @@
                   </ImageView>
                </graphic>
             </Button>
+            <AnchorPane fx:id="resultPane" layoutX="166.0" layoutY="85.0" prefHeight="389.0" prefWidth="540.0">
+               <children>
+                  <Button layoutX="217.0" layoutY="346.0" mnemonicParsing="false" onAction="#showAnswers" prefHeight="30.0" prefWidth="105.0" styleClass="select-button" stylesheets="@../Ultis/value/styles.css" text="View answers" textFill="WHITE">
+                     <tooltip>
+                        <Tooltip text="Xem kết quả" />
+                     </tooltip>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Pane layoutX="9.0" layoutY="151.0" prefHeight="187.0" prefWidth="508.0" stylesheets="@../Ultis/value/styles.css">
+                     <children>
+                        <Label fx:id="resLabel" layoutX="-1.0" prefHeight="63.0" prefWidth="528.0" text="Notification" wrapText="true">
+                           <font>
+                              <Font size="26.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="resComment" layoutX="-1.0" layoutY="62.0" prefHeight="138.0" prefWidth="527.0" text="Comment" wrapText="true">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                           </padding>
+                        </Label>
+                        <Line endX="355.99993896484375" layoutX="149.0" layoutY="63.0" startX="-148.0" />
+                     </children>
+                     <styleClass>
+                        <String fx:value="input" />
+                        <String fx:value="root_info" />
+                     </styleClass>
+                  </Pane>
+               </children>
+            </AnchorPane>
          </children>
       </AnchorPane>
    </right>

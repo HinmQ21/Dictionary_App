@@ -183,3 +183,10 @@
     -fx-background-radius: 5;
     -fx-border-radius: 5;
 }
+
+.count_question {
+    -fx-border-color: linear-gradient(#0c97c1, #08c1a5);
+    -fx-border-width: 1.5;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+}
