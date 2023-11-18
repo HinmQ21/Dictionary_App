@@ -53,14 +53,6 @@ public class HangManGameController implements Initializable {
 
     private GameHangMan gameHangMan;
 
-    /*public AnchorPane getHangManContainer() {
-        return hangManContainer;
-    }
-
-    public void setHangManContainer(AnchorPane hangManContainer) {
-        this.hangManContainer = hangManContainer;
-    }
-*/
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         keyWord.setEditable(false);
@@ -80,6 +72,16 @@ public class HangManGameController implements Initializable {
         gameHangMan = new GameHangMan();
         gameHangMan.setHangManLives(6);
         lives.setText("6");
+    }
+
+    private void showComponent(String path) {
+        try {
+            BorderPane component = FXMLLoader.load(getClass().getResource(path));
+            hangManContainer.getChildren().clear();
+            hangManContainer.getChildren().add(component);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     // update images for hangman body parts
@@ -109,6 +111,12 @@ public class HangManGameController implements Initializable {
         Button selectLetter = (Button) actionEvent.getSource();
         String input = selectLetter.getId();
         String newWord = gameHangMan.letterMatch(input.charAt(0));
+        if(gameHangMan.getHangManLives() == 0) {
+            showComponent("/fxml/LoseHangManGame.fxml");
+        }
+        if(GameHangMan.getRandomWord().equals(String.valueOf(GameHangMan.getSecretWord()))){
+            showComponent("/fxml/WinHangManGame.fxml");
+        }
         keyWord.setText(newWord);
         updateImage(gameHangMan.getHangManLives());
 
@@ -121,13 +129,7 @@ public class HangManGameController implements Initializable {
     }
 
     public void onActionHomeHangMan() {
-        try {
-            BorderPane component = FXMLLoader.load(getClass().getResource("/fxml/MenuHangManGame.fxml"));
-            hangManContainer.getChildren().clear();
-            hangManContainer.getChildren().add(component);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        showComponent("/fxml/MenuHangManGame.fxml");
         gameHangMan.getWords().clear();
     }
 

@@ -5,11 +5,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 
-import java.awt.*;
 import java.io.IOException;
 
-public class WinHangManGame {
-
+public class ResultHangManGame {
     private GameHangMan gameHangMan = new GameHangMan();
     @FXML
     AnchorPane hangManContainer;

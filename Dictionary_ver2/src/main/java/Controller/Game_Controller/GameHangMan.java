@@ -56,6 +56,8 @@ public class GameHangMan {
     }
 
 
+
+
     public void readFiles (String fileName)  {
         try {
             bufferedReader = new BufferedReader(new FileReader(fileName));
@@ -105,16 +107,8 @@ public class GameHangMan {
                 newWord += secretWord[i];
             }
         }
-        if(newWord.equals(randomWord)){
-            System.out.println("You win");
-            //gameWin();
-        }
         if(check == true) {
             hangManLives--;
-        }
-        if(hangManLives == 0) {
-            System.out.println("You lose");
-            //gameOver();
         }
         secretWord = newWord.toCharArray();
         System.out.println(randomWord);
@@ -122,50 +116,4 @@ public class GameHangMan {
         System.out.println(secretWord);
         return newWord;
     }
-    /*public void gameWin () {
-        try {
-            BorderPane component = FXMLLoader.load(getClass().getResource("/fxml/WinHangManGame.fxml"));
-            hangManContainer.getChildren().clear();
-            hangManContainer.getChildren().add(component);
-            *//*FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/WinHangManGame.fxml"));
-            Parent root = loader.load();
-
-            // Nếu có logic cần thực hiện trên controller của Màn hình Chiến thắng, bạn có thể lấy nó như sau:
-            WinHangManGame winHangManGame = loader.getController();
-
-            Stage winScreenStage = new Stage();
-            winScreenStage.setScene(new Scene(root));
-            winScreenStage.show();*//*
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void gameOver () {
-        try {
-            *//*AnchorPane component = FXMLLoader.load(getClass().getResource("/fxml/LoseHangManGame.fxml"));
-//            hangManContainer.getChildren().clear();
-//            hangManContainer.getChildren().add(component);
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/HangManGame.fxml"));
-            //Parent root = loader.load();
-            HangManGameController hangManGameController = loader.getController();
-            hangManGameController.setHangManContainer(new AnchorPane());
-            hangManGameController.getHangManContainer().getChildren().clear();
-            hangManGameController.getHangManContainer().getChildren().add(component);*//*
-            BorderPane component = FXMLLoader.load(getClass().getResource("/fxml/LoseHangManGame.fxml"));
-            hangManContainer.getChildren().clear();
-            hangManContainer.getChildren().add(component);
-            *//*FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/LoseHangManGame.fxml"));
-            Parent root = loader.load();
-
-            // Nếu có logic cần thực hiện trên controller của Màn hình Chiến thắng, bạn có thể lấy nó như sau:
-            LoseHangManGame loseHangManGame = loader.getController();
-
-            Stage lose = new Stage();
-            lose.setScene(new Scene(root));
-            lose.show();*//*
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }*/
 }

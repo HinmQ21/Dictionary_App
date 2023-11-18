@@ -1,23 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.shape.Line?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="558.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.GameController">
    <center>
-      <AnchorPane fx:id="gameContainer" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="gameContainer" prefHeight="558.0" prefWidth="780.0" BorderPane.alignment="CENTER">
          <children>
-            <AnchorPane fx:id="hangMan" onMouseClicked="#onActionStartHangManGame" prefHeight="558.0" prefWidth="390.0">
+            <AnchorPane fx:id="hangMan" layoutY="3.0" onMouseClicked="#onActionStartHangManGame" prefHeight="558.0" prefWidth="390.0">
                <children>
-                  <Label layoutX="155.0" layoutY="65.0" text="HangMan" />
+                  <ImageView fitHeight="558.0" fitWidth="390.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Ultis/images/9781677729975%20(1).jpg" />
+                     </image>
+                  </ImageView>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="quizGame" layoutX="390.0" onMouseClicked="#onActionStartQuizGame" prefHeight="558.0" prefWidth="390.0">
+            <AnchorPane fx:id="quizGame" layoutX="389.0" layoutY="3.0" onMouseClicked="#onActionStartQuizGame" prefHeight="558.0" prefWidth="390.0">
                <children>
-                  <Label layoutX="165.0" layoutY="67.0" text="Quiz Game" />
-                  <Line endX="296.9999694824219" endY="402.79998779296875" layoutX="-297.0" layoutY="83.0" startX="296.9999694824219" startY="1.9999938011169434" />
+                  <ImageView fitHeight="558.0" fitWidth="390.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Ultis/images/94856-OK8685-102%20(1).jpg" />
+                     </image>
+                  </ImageView>
                </children>
             </AnchorPane>
          </children>

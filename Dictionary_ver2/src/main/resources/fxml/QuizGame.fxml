@@ -14,23 +14,23 @@
          <children>
             <ImageView fitHeight="558.0" fitWidth="780.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Ultis/images/sl_120622_54360_13.jpg" />
+                  <Image url="@../Ultis/images/quiz-show-concept-illustration_114360-9771%20(1).jpg" />
                </image>
             </ImageView>
-            <Button layoutX="61.0" layoutY="361.0" mnemonicParsing="false" onAction="#onActionStartMulti" prefHeight="136.0" prefWidth="302.0" styleClass="multichoice-button" stylesheets="@../Ultis/value/styles.css" text="Multichoice">
+            <Button layoutX="400.0" layoutY="295.0" mnemonicParsing="false" onAction="#onActionStartMulti" prefHeight="54.0" prefWidth="140.0" styleClass="multichoice-button" stylesheets="@../Ultis/value/styles.css" text="Multichoice">
                <tooltip>
                   <Tooltip text="Cập nhật từ" />
                </tooltip>
                <font>
-                  <Font size="36.0" />
+                  <Font name="Calibri Bold" size="20.0" />
                </font>
             </Button>
-            <Button layoutX="384.0" layoutY="362.0" mnemonicParsing="false" onAction="#onActionStartFill" prefHeight="134.0" prefWidth="301.0" styleClass="multichoice-button" stylesheets="@../Ultis/value/styles.css" text="Fill the blank">
+            <Button contentDisplay="CENTER" layoutX="555.0" layoutY="295.0" mnemonicParsing="false" onAction="#onActionStartFill" prefHeight="54.0" prefWidth="140.0" styleClass="multichoice-button" stylesheets="@../Ultis/value/styles.css" text="Fill the blank">
                <tooltip>
                   <Tooltip text="Cập nhật từ" />
                </tooltip>
                <font>
-                  <Font size="36.0" />
+                  <Font name="Calibri Bold" size="20.0" />
                </font>
             </Button>
          </children>
