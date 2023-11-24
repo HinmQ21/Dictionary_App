@@ -56,7 +56,7 @@ public class MultichoiceGame implements Initializable {
         }
     }
 
-    private final MultiChoiceQuestion[] quesList = {
+    private final MultiChoiceQuestion[] allQuestions = {
             new MultiChoiceQuestion("The weather is so _______ that we decided to have a picnic in the park.", new String[]{"good", "sunny", "well", "fine"}, 1),
             new MultiChoiceQuestion("She is allergic _______ cats.", new String[]{"on", "with", "to", "for"}, 2),
             new MultiChoiceQuestion("Yesterday, she _______ to the store and _______ some groceries.", new String[]{"go / buy", "went / buy", "goes / buys", "gone / buying"}, 1),
@@ -66,18 +66,58 @@ public class MultichoiceGame implements Initializable {
             new MultiChoiceQuestion("By the time we get to the cinema, the movie _______.", new String[]{"will start", "started", "starts", "will have started"}, 3),
             new MultiChoiceQuestion("I have two _______.", new String[]{"child", "childs", "childes", "children"}, 3),
             new MultiChoiceQuestion("her / birthday / we / a surprise / gave", new String[]{"We gave a surprise her birthday.", "We gave her a surprise birthday.", "A surprise we gave her birthday.", "Her birthday gave we a surprise."}, 1),
-            new MultiChoiceQuestion("She loves to read, _______ she also enjoys watching movies.", new String[]{"or", "so", "but", "because"}, 2)
+            new MultiChoiceQuestion("She loves to read, _______ she also enjoys watching movies.", new String[]{"or", "so", "but", "because"}, 2),
+            new MultiChoiceQuestion("The children played in the park _______ the rain stopped.", new String[]{"until", "while", "when", "since"}, 0),
+            new MultiChoiceQuestion("He is always _______ time for his morning meditation.", new String[]{"take", "takes", "taken", "taking"}, 1),
+            new MultiChoiceQuestion("The cat jumped _______ the table.", new String[]{"above", "on", "over", "across"}, 2),
+            new MultiChoiceQuestion("I have never been to that city, but I have heard it's a beautiful _______.", new String[]{"place", "spaces", "location", "spot"}, 0),
+            new MultiChoiceQuestion("The students were asked to work _______ on their group project.", new String[]{"together", "alone", "single", "singly"}, 0),
+            new MultiChoiceQuestion("The scientist conducted several experiments to _______ his hypothesis.", new String[]{"prove", "approval", "acceptance", "support"}, 0),
+            new MultiChoiceQuestion("The concert tickets sold out quickly, so we couldn't get any _______.", new String[]{"ones", "it", "them", "tickets"}, 3),
+            new MultiChoiceQuestion("My parents have been married for 25 years; they are celebrating their _______ anniversary.", new String[]{"silver", "golden", "diamond", "ruby"}, 1),
+            new MultiChoiceQuestion("The road was blocked due to a _______ accident.", new String[]{"serious", "seriously", "seriousness", "serios"}, 0),
+            new MultiChoiceQuestion("She prefers to travel by train _______ by bus.", new String[]{"then", "over", "rather", "more"}, 2),
+            new MultiChoiceQuestion("The teacher asked the students to submit their assignments _______ the end of the week.", new String[]{"on", "at", "in", "by"}, 3),
+            new MultiChoiceQuestion("The chef prepared a delicious meal with a variety of fresh _______ and spices.", new String[]{"herbs", "herbses", "herb", "herbals"}, 0),
+            new MultiChoiceQuestion("He is known for his great sense of _______ and always makes people laugh.", new String[]{"humor", "funny", "comedic", "laughter"}, 0),
+            new MultiChoiceQuestion("The company organized a team-building workshop to _______ communication among employees.", new String[]{"enhance", "increase", "improve", "develop"}, 2),
+            new MultiChoiceQuestion("The baby slept peacefully _______ his mother sang a lullaby.", new String[]{"although", "when", "since", "while"}, 3),
+            new MultiChoiceQuestion("The athlete trained hard to improve his _______ and endurance.", new String[]{"strength", "power", "force", "energy"}, 0),
+            new MultiChoiceQuestion("The art gallery features a diverse collection of contemporary _______.", new String[]{"paintings", "sculptures", "artworks", "drawings"}, 2),
+            new MultiChoiceQuestion("She is skilled in multiple languages; _______, she can speak French, Spanish, and German.", new String[]{"moreover", "however", "nevertheless", "furthermore"}, 0),
+            new MultiChoiceQuestion("The mountain trail is steep, so hikers need to be in good _______ for the climb.", new String[]{"condition", "shape", "form", "health"}, 0),
+            new MultiChoiceQuestion("The company's success is attributed _______ its dedicated employees.", new String[]{"at", "by", "on", "to"}, 1),
+            new MultiChoiceQuestion("The child was scared of the dark and always slept with a nightlight _______.", new String[]{"on", "in", "at", "by"}, 0),
+            new MultiChoiceQuestion("The students were asked to submit their essays _______ the end of the semester.", new String[]{"until", "by", "to", "during"}, 1),
+            new MultiChoiceQuestion("She was surprised to find a beautiful bouquet of flowers _______ her doorstep.", new String[]{"on", "at", "in", "by"}, 3),
+            new MultiChoiceQuestion("The scientist made a groundbreaking _______ in the field of medicine.", new String[]{"discover", "discovery", "discovered", "discoverer"}, 1),
+            new MultiChoiceQuestion("The children played happily _______ the playground.", new String[]{"at", "on", "in", "with"}, 2),
+            new MultiChoiceQuestion("I will meet you _______ the park after work.", new String[]{"in", "at", "on", "by"}, 1),
+            new MultiChoiceQuestion("The museum has a vast collection of historical _______ from different eras.", new String[]{"pieces", "works", "items", "artifacts"}, 3),
+            new MultiChoiceQuestion("The cat is sitting _______ the chair and the sofa.", new String[]{"among", "between", "beside", "around"}, 1),
+            new MultiChoiceQuestion("He enjoys playing the guitar _______ the evenings.", new String[]{"at", "on", "in", "by"}, 2),
+            new MultiChoiceQuestion("The book is _______ on the top shelf, out of reach.", new String[]{"placed", "put", "set", "located"}, 2)
     };
 
+    private MultiChoiceQuestion[] quesList = new MultiChoiceQuestion[10];
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         curQuestion = 0;
         curScore = 0;
+        randomQuestions();
         displayQuestion(curQuestion);
         resultPane.setVisible(false);
         answerPane.setVisible(false);
+    }
+
+    private void randomQuestions() {
+        int random = (int) (Math.random() * 4 + 1);
+        for (int i = 0; i < 10; i++) {
+            quesList[i] = allQuestions[random];
+            random += (int) (Math.random() * 4 + 1);
+        }
     }
 
     private void displayQuestion(int th) {

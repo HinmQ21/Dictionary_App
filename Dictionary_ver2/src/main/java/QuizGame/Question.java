@@ -9,6 +9,10 @@ public abstract class Question {
         return questionText;
     }
 
+    public void setQuestionText(String questionText) {
+        this.questionText = questionText;
+    }
+
     public int getPoint() {
         return point;
     }

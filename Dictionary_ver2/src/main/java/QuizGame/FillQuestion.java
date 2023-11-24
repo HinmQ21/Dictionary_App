@@ -16,4 +16,9 @@ public class FillQuestion extends Question{
     public String getQuestionText() {
         return this.questionText;
     }
+
+    @Override
+    public void setQuestionText(String questionText) {
+        super.setQuestionText(questionText);
+    }
 }

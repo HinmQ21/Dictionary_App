@@ -48,23 +48,74 @@ public class fillGame implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         curQuestion = 0;
         curScore = 0;
+        randomQuestions();
         displayQuestion(curQuestion);
         resultPane.setVisible(false);
         answerPane.setVisible(false);
     }
 
-    private final FillQuestion[] quesList = {
-            new FillQuestion("She _ _ _ _ to the store when she realized she forgot her wallet.", "went"),
-            new FillQuestion("The students _ _ _ _ _ _ _ hard for the upcoming exams.", "studied"),
-            new FillQuestion("He couldn't find his keys, so he had to _ _ _ _ _ _ for them everywhere.", "search"),
-            new FillQuestion("The weather was so _ _ _ that we decided to stay indoors.", "bad"),
-            new FillQuestion("I need to buy some _ _ _ _ _ _ _ _ _ _ _ for the recipe I'm making for dinner.", "ingredients"),
-            new FillQuestion("The cat is sitting _ _ _ _ _ _ _ the table and the chair.", "between"),
-            new FillQuestion("We have a meeting _ _ Monday morning at 9 AM.", "on"),
-            new FillQuestion("The concert was amazing; the band played _ _ _ _ songs from their new album.", "many"),
-            new FillQuestion("She opened the door and saw a _ _ _ _ _ _ _ _ _ bouquet of flowers on the doorstep.", "beautiful"),
-            new FillQuestion("My grandmother always tells me stories from her _ _ _ _ _.", "youth")
+    private final FillQuestion[] allQuestions = {
+            new FillQuestion("She ??? to the store when she realized she forgot her wallet.", "went"),
+            new FillQuestion("The students ??? hard for the upcoming exams.   ", "studied"),
+            new FillQuestion("He couldn't find his keys, so he had to ??? for them everywhere.", "search"),
+            new FillQuestion("The weather was so ??? that we decided to stay indoors.", "bad"),
+            new FillQuestion("I need to buy some ??? for the recipe I'm making for dinner.", "ingredients"),
+            new FillQuestion("The cat is sitting ??? the table and the chair.", "between"),
+            new FillQuestion("We have a meeting ??? Monday morning at 9 AM.", "on"),
+            new FillQuestion("The concert was amazing; the band played ??? songs from their new album.", "many"),
+            new FillQuestion("She opened the door and saw a ??? bouquet of flowers on the doorstep.", "beautiful"),
+            new FillQuestion("My grandmother always tells me stories from her ???.", "youth"),
+            new FillQuestion("The ??? was too high for him to reach without a ladder.", "shelf"),
+            new FillQuestion("I can't believe I ??? my phone at home again.", "forgot"),
+            new FillQuestion("The ??? was covered in a thick layer of snow.", "landscape"),
+            new FillQuestion("After the rain, there was a ??? in the sky.", "rainbow"),
+            new FillQuestion("She ??? her favorite movie for the tenth time.", "watched"),
+            new FillQuestion("The ??? was filled with ancient artifacts.", "museum"),
+            new FillQuestion("He ??? his car before the road trip.", "checked"),
+            new FillQuestion("We had to ??? the event due to bad weather.", "cancel"),
+            new FillQuestion("She loves to read books ??? bed.", "before"),
+            new FillQuestion("The cat is hiding ??? the sofa.", "behind"),
+            new FillQuestion("We decided to go for a walk ??? the beautiful garden.", "through"),
+            new FillQuestion("The teacher asked the students to write their names ??? the top of the page.", "at"),
+            new FillQuestion("They had to climb a steep hill ??? they could see the entire city.", "before"),
+            new FillQuestion("He enjoys listening to music ??? he works.", "while"),
+            new FillQuestion("I will meet you at the cafe ??? 3:00 PM.", "at"),
+            new FillQuestion("She is allergic to peanuts, so she always checks the ingredients ??? buying snacks.", "before"),
+            new FillQuestion("We gathered ??? the fireplace to stay warm.", "around"),
+            new FillQuestion("The company organized a team-building workshop ??? improve communication.", "to"),
+            new FillQuestion("The sun sets in the west, painting the sky with shades of ??? and orange.", "pink"),
+            new FillQuestion("She always takes a break to have a cup of coffee ??? starting her work.", "before"),
+            new FillQuestion("The students were fascinated by the teacher's ??? explanation of the scientific experiment.", "detailed"),
+            new FillQuestion("The train arrived at the station ??? time, and we boarded quickly.", "on"),
+            new FillQuestion("He is known for his ability to remain calm and composed ??? stressful situations.", "during"),
+            new FillQuestion("The museum displays a wide collection of ancient ??? from different civilizations.", "artifacts"),
+            new FillQuestion("The children played ??? in the backyard, laughing and enjoying the sunshine.", "happily"),
+            new FillQuestion("We need to make a reservation ??? advance to secure a table at the restaurant.", "in"),
+            new FillQuestion("The detective carefully examined the crime scene ??? finding any clues.", "before"),
+            new FillQuestion("She always carries a small notebook ??? jot down her ideas throughout the day.", "to"),
+            new FillQuestion("The road was blocked, so we had to take a detour ??? reach our destination.", "to"),
+            new FillQuestion("The baby slept peacefully ??? her mother's comforting lullaby.", "to")
     };
+
+    private FillQuestion[] quesList = new FillQuestion[10];
+
+    private void reformatQuestion(FillQuestion fillQuestion) {
+        if (fillQuestion != null) {
+            String blank = "_ ".repeat(Math.max(0, fillQuestion.getAnswer().length() - 1)) +
+                    "_";
+            String newFormat = fillQuestion.getQuestionText().replace("???", blank);
+            fillQuestion.setQuestionText(newFormat);
+        }
+    }
+
+    private void randomQuestions() {
+        int random = (int) (Math.random() * 4 + 1);
+        for (int i = 0; i < 10; i++) {
+            quesList[i] = allQuestions[random];
+            reformatQuestion(quesList[i]);
+            random += (int) (Math.random() * 4 + 1);
+        }
+    }
 
     private void displayQuestion(int th) {
         quesNum.setText("Question : " + (curQuestion + 1) + "/10");

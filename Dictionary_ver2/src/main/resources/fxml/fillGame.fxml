@@ -43,45 +43,45 @@
                   </Button>
                </children>
             </Pane>
-            <AnchorPane fx:id="answerPane" layoutX="102.0" layoutY="428.0" prefHeight="107.0" prefWidth="599.0" styleClass="question" stylesheets="@../Ultis/value/styles.css">
+            <AnchorPane fx:id="answerPane" layoutX="63.0" layoutY="428.0" prefHeight="107.0" prefWidth="682.0" styleClass="question" stylesheets="@../Ultis/value/styles.css">
                <children>
-                  <Label fx:id="C1" layoutX="20.0" layoutY="21.0" text="C1">
+                  <Label fx:id="C1" layoutX="9.0" layoutY="21.0" text="C1">
                      <font>
                         <Font size="18.0" />
                      </font></Label>
-                  <Label fx:id="C2" layoutX="128.0" layoutY="21.0" text="C2">
+                  <Label fx:id="C2" layoutX="150.0" layoutY="21.0" text="C2">
                      <font>
                         <Font size="18.0" />
                      </font></Label>
-                  <Label fx:id="C3" layoutX="247.0" layoutY="21.0" text="C3">
+                  <Label fx:id="C3" layoutX="285.0" layoutY="21.0" text="C3">
                      <font>
                         <Font size="18.0" />
                      </font></Label>
-                  <Label fx:id="C4" layoutX="351.0" layoutY="21.0" text="C4">
+                  <Label fx:id="C4" layoutX="410.0" layoutY="21.0" text="C4">
                      <font>
                         <Font size="18.0" />
                      </font></Label>
-                  <Label fx:id="C5" layoutX="468.0" layoutY="21.0" text="C5">
+                  <Label fx:id="C5" layoutX="550.0" layoutY="21.0" text="C5">
                      <font>
                         <Font size="18.0" />
                      </font></Label>
-                  <Label fx:id="C6" layoutX="20.0" layoutY="66.0" text="C6">
+                  <Label fx:id="C6" layoutX="9.0" layoutY="66.0" text="C6">
                      <font>
                         <Font size="18.0" />
                      </font></Label>
-                  <Label fx:id="C7" layoutX="128.0" layoutY="66.0" text="C7">
+                  <Label fx:id="C7" layoutX="150.0" layoutY="66.0" text="C7">
                      <font>
                         <Font size="18.0" />
                      </font></Label>
-                  <Label fx:id="C8" layoutX="247.0" layoutY="66.0" text="C8">
+                  <Label fx:id="C8" layoutX="285.0" layoutY="66.0" text="C8">
                      <font>
                         <Font size="18.0" />
                      </font></Label>
-                  <Label fx:id="C9" layoutX="351.0" layoutY="66.0" text="C9">
+                  <Label fx:id="C9" layoutX="410.0" layoutY="66.0" text="C9">
                      <font>
                         <Font size="18.0" />
                      </font></Label>
-                  <Label fx:id="C10" layoutX="465.0" layoutY="66.0" text="C10">
+                  <Label fx:id="C10" layoutX="545.0" layoutY="66.0" text="C10">
                      <font>
                         <Font size="18.0" />
                      </font></Label>
