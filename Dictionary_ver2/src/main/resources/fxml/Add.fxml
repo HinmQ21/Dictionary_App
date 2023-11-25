@@ -28,7 +28,7 @@
             <children>
                <ImageView fitHeight="132.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                   <image>
-                     <Image url="@../Ultis/images/8909708%20(1).jpg" />
+                     <Image url="@../Ultis/images/a-z.jpg" />
                   </image>
                </ImageView>
                <VBox alignment="CENTER" prefHeight="132.0" prefWidth="580.0" styleClass="add_top-background" stylesheets="@../Ultis/value/styles.css">
@@ -53,7 +53,7 @@
                </VBox>
                <ImageView fitHeight="132.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" styleClass="transparent">
                   <image>
-                     <Image url="@../Ultis/images/19199094%20(1).jpg" />
+                     <Image url="@../Ultis/images/aabbcc.jpg" />
                   </image>
                </ImageView>
             </children>

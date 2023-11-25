@@ -13,10 +13,10 @@
          <children>
             <ImageView fitHeight="558.0" fitWidth="780.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Ultis/images/2109969.jpg" />
+                  <Image url="@../Ultis/images/LoseHangMan.jpg" />
                </image>
             </ImageView>
-            <Button layoutX="291.0" layoutY="453.0" mnemonicParsing="false" onAction="#onActionPlayAgain" prefHeight="56.0" prefWidth="210.0" styleClass="select-button" stylesheets="@../Ultis/value/styles.css" text="PlayAgain">
+            <Button layoutX="284.0" layoutY="309.0" mnemonicParsing="false" onAction="#onActionPlayAgain" prefHeight="56.0" prefWidth="210.0" styleClass="select-button" stylesheets="@../Ultis/value/styles.css" text="PlayAgain">
                <font>
                   <Font name="Calibri Bold" size="24.0" />
                </font></Button>

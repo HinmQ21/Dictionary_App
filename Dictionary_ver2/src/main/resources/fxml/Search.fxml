@@ -24,7 +24,7 @@
          <children>
             <ImageView fitHeight="130.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Ultis/images/2647628%20(1).jpg" />
+                  <Image url="@../Ultis/images/look.jpg" />
                </image>
             </ImageView>
             <VBox alignment="CENTER" prefHeight="130.0" prefWidth="540.0" styleClass="add_top-background" stylesheets="@../Ultis/value/styles.css">
@@ -179,7 +179,7 @@
                                        <graphic>
                                           <ImageView fitHeight="50.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../Ultis/icons/icons8-submit-64%20(2).png" />
+                                                <Image url="@../Ultis/icons/submit.png" />
                                              </image>
                                           </ImageView>
                                        </graphic></Button>
@@ -209,7 +209,7 @@
                                        <graphic>
                                           <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../Ultis/icons/icons8-yes-64%20(1).png" />
+                                                <Image url="@../Ultis/icons/yes.png" />
                                              </image>
                                           </ImageView>
                                        </graphic>
@@ -218,7 +218,7 @@
                                        <graphic>
                                           <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../Ultis/icons/icons8-no-64%20(1).png" />
+                                                <Image url="@../Ultis/icons/no.png" />
                                              </image>
                                           </ImageView>
                                        </graphic>

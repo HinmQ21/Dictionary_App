@@ -23,7 +23,7 @@
                      <children>
                         <ImageView fitHeight="190.0" fitWidth="780.0" layoutX="1.0" layoutY="5.5" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../Ultis/images/MicrosoftTeams-image%20(3)%20(3).png" />
+                              <Image url="@../Ultis/images/see.png" />
                            </image>
                         </ImageView>
                      </children>

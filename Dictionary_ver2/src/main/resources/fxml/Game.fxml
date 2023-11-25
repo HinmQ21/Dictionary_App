@@ -9,20 +9,20 @@
    <center>
       <AnchorPane fx:id="gameContainer" prefHeight="558.0" prefWidth="780.0" BorderPane.alignment="CENTER">
          <children>
-            <AnchorPane fx:id="hangMan" layoutY="3.0" onMouseClicked="#onActionStartHangManGame" prefHeight="558.0" prefWidth="390.0">
+            <AnchorPane fx:id="hangMan" onMouseClicked="#onActionStartHangManGame" prefHeight="558.0" prefWidth="390.0">
                <children>
-                  <ImageView fitHeight="558.0" fitWidth="390.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="558.0" fitWidth="390.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Ultis/images/9781677729975%20(1).jpg" />
+                        <Image url="@../Ultis/images/hangman.jpg" />
                      </image>
                   </ImageView>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="quizGame" layoutX="389.0" layoutY="3.0" onMouseClicked="#onActionStartQuizGame" prefHeight="558.0" prefWidth="390.0">
+            <AnchorPane fx:id="quizGame" layoutX="390.0" onMouseClicked="#onActionStartQuizGame" prefHeight="558.0" prefWidth="390.0">
                <children>
                   <ImageView fitHeight="558.0" fitWidth="390.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Ultis/images/94856-OK8685-102%20(1).jpg" />
+                        <Image url="@../Ultis/images/QuizHome.png" />
                      </image>
                   </ImageView>
                </children>

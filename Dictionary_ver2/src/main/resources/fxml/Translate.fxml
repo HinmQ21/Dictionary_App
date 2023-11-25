@@ -44,7 +44,7 @@
             </VBox>
             <ImageView fitHeight="126.0" fitWidth="120.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Ultis/images/20944354%20(1).jpg" />
+                  <Image url="@../Ultis/images/word.jpg" />
                </image>
             </ImageView>
          </children></HBox>
