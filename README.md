@@ -11,4 +11,10 @@ Trần Hậu Nam
 3. Trong ứng dụng chứa các tính năng như thêm, bớt, sửa từ mới và tra cứu từ điển
 4. Ứng dụng có tích hợp API translate (dịch từ tiếng anh và từ tiếng việt), API text to speech (đọc từ tiếng anh và từ tiếng việt)
 5. Ứng dụng có phần Grammar( Ngữ pháp ) để học bổ sung
-6. Cuối cùng, chúng tôi có bổ sung 2 game để học từ vựng ( HangMan && QuizGame ) 
+6. Cuối cùng, chúng tôi có bổ sung 2 game để học từ vựng ( HangMan && QuizGame )
+## Installation :
+1. Clone project về máy
+2. Mở project trong IDE (ở đây mình dùng IntelliJ)
+3. Trước khi dạy chương trình cần set JDK && add VM Option :\
+`--module-path "path to javafx lib folder" --add-modules javafx.controls,javafx.fxml,javafx.web`
+## Demo :
