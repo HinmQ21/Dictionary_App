@@ -10,14 +10,9 @@ import java.net.HttpURLConnection;
 import java.net.URLEncoder;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 import java.io.BufferedInputStream;
 import java.io.InputStream;
-import java.util.HashMap;
-import java.util.Map;
 
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
@@ -76,6 +71,43 @@ public class DictionaryManagement {
             System.out.println(e.getMessage());
         }
         return list;
+    }
+
+    public static Word getWordByHash(int hash, String table) {
+        Connection con = null;
+        Statement statement = null;
+        Word word = null;
+
+        try {
+            Class.forName("org.sqlite.JDBC");
+            con = DriverManager.getConnection(URL);
+            con.setAutoCommit(false);
+            statement = con.createStatement();
+
+            PreparedStatement preparedStatement = con.prepareStatement("SELECT COUNT(*) AS total_samples FROM av");
+            ResultSet resultSet = preparedStatement.executeQuery();
+            resultSet.next();
+            int totalSample = resultSet.getInt("total_samples");
+
+            int th = hash % totalSample;
+            String sql = "SELECT * FROM av\n" +
+                    "LIMIT 1 OFFSET " + (th - 1);
+            resultSet = statement.executeQuery(sql);
+
+            while(resultSet.next()) {
+                word = new Word(resultSet.getString("word"),
+                        resultSet.getString("html")
+                );
+            }
+            resultSet.close();
+            statement.close();
+            con.close();
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        return word;
     }
 
     public static void dbAdd(String word, String pronounce, String description, String table) {

@@ -14,6 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class SearchController implements Initializable {
@@ -34,6 +35,9 @@ public class SearchController implements Initializable {
     private AnchorPane updateWindow;
 
     @FXML
+    private AnchorPane suggestPane;
+
+    @FXML
     private TextArea newDefinition;
 
     @FXML
@@ -45,6 +49,11 @@ public class SearchController implements Initializable {
     @FXML
     private ImageView rightFlag;
 
+    @FXML
+    Label wordOfDay;
+
+    private Word chosenWord = null;
+
     private ObservableList<Word> list = FXCollections.observableArrayList();
 
 
@@ -55,6 +64,26 @@ public class SearchController implements Initializable {
         listWord.setItems(list);
         updateWindow.setVisible(false);
         deleteConfirmation.setVisible(false);
+        suggestPane.setVisible(false);
+        choseWordOfDay();
+    }
+
+    public void onActionSuggest() {
+        suggestPane.setVisible(!suggestPane.isVisible());
+    }
+
+    private void choseWordOfDay() {
+        LocalDate currentDate = LocalDate.now();
+
+        int hashCode = currentDate.hashCode();
+        chosenWord = DictionaryManagement.getWordByHash(hashCode, eng_vieTable);
+        wordOfDay.setText(chosenWord.toString());
+    }
+
+    public void onActionGo() {
+        searchField.setText(chosenWord.getWord_target());
+        listWord.setItems(null);
+        definitionArea.getEngine().loadContent(chosenWord.getWord_explain());
     }
 
     public void onActionExchange() {

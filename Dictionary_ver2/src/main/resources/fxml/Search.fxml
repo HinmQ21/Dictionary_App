@@ -229,6 +229,14 @@
                                     <String fx:value="root_update" />
                                  </styleClass>
                               </AnchorPane>
+                              <Button onAction="#onActionSuggest" layoutX="498.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="62.0" text="Suggest" />
+                              <AnchorPane fx:id="suggestPane" layoutX="366.0" layoutY="64.0" prefHeight="119.0" prefWidth="200.0">
+                                 <children>
+                                    <Label layoutX="51.0" layoutY="21.0" text="Word of today" />
+                                    <Label fx:id="wordOfDay" layoutX="8.0" layoutY="60.0" prefHeight="46.0" prefWidth="140.0" text="Label" />
+                                    <Button onAction="#onActionGo" layoutX="148.0" layoutY="60.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="46.0" text="Go" />
+                                 </children>
+                              </AnchorPane>
                            </children>
                         </AnchorPane>
                      </children>
