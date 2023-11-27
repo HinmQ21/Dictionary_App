@@ -1,6 +1,5 @@
 package Controller.Game_Controller;
 
-//import Controller.Game_Controller.GameHM;
 import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -84,7 +83,6 @@ public class HangManGameController implements Initializable {
         }
     }
 
-    // update images for hangman body parts
     public void updateImage(int hangManLives){
         if (hangManLives == 5 ){
             head.setVisible(true);

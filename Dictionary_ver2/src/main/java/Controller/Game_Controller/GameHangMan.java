@@ -16,7 +16,6 @@ import java.util.Random;
 import java.util.Stack;
 
 public class GameHangMan {
-    //public AnchorPane hangManContainer = HangManGameController.hangManContainer;
     private BufferedReader bufferedReader;
     private static String randomWord ;
     private static List<String> words = new ArrayList<>();

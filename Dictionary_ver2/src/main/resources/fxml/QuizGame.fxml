@@ -19,7 +19,7 @@
             </ImageView>
             <Button layoutX="400.0" layoutY="295.0" mnemonicParsing="false" onAction="#onActionStartMulti" prefHeight="54.0" prefWidth="140.0" styleClass="multichoice-button" stylesheets="@../Ultis/value/styles.css" text="Multichoice">
                <tooltip>
-                  <Tooltip text="Cập nhật từ" />
+                  <Tooltip text="Multichoice" />
                </tooltip>
                <font>
                   <Font name="Calibri Bold" size="20.0" />
@@ -27,7 +27,7 @@
             </Button>
             <Button contentDisplay="CENTER" layoutX="555.0" layoutY="295.0" mnemonicParsing="false" onAction="#onActionStartFill" prefHeight="54.0" prefWidth="140.0" styleClass="multichoice-button" stylesheets="@../Ultis/value/styles.css" text="Fill the blank">
                <tooltip>
-                  <Tooltip text="Cập nhật từ" />
+                  <Tooltip text="Fill the blank" />
                </tooltip>
                <font>
                   <Font name="Calibri Bold" size="20.0" />

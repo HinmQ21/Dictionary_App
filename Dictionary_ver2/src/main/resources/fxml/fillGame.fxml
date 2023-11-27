@@ -40,6 +40,9 @@
                            </image>
                         </ImageView>
                      </graphic>
+                     <tooltip>
+                        <Tooltip text="Nộp" />
+                     </tooltip>
                   </Button>
                </children>
             </Pane>
@@ -98,6 +101,9 @@
                      </image>
                   </ImageView>
                </graphic>
+               <tooltip>
+                  <Tooltip text="Home" />
+               </tooltip>
             </Button>
             <Label fx:id="quesNum" layoutX="304.0" layoutY="28.0" prefHeight="42.0" prefWidth="198.0" styleClass="count_question" stylesheets="@../Ultis/value/styles.css" text="Question 1 / 10 :">
                <font>
