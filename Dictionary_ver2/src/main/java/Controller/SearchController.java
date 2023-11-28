@@ -58,7 +58,6 @@ public class SearchController implements Initializable {
 
     private ObservableList<Word> list = FXCollections.observableArrayList();
 
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         curTable = eng_vieTable;
@@ -86,13 +85,7 @@ public class SearchController implements Initializable {
         searchField.setText(chosenWord.getWord_target());
         listWord.setItems(null);
         definitionArea.getEngine().loadContent(chosenWord.getWord_explain());
-
-        FadeTransition fadeTransition = new FadeTransition(Duration.millis(1000), suggestPane);
-        fadeTransition.setFromValue(1.0);
-        fadeTransition.setToValue(0.0);
-        fadeTransition.play();
-
-        suggestPane.setDisable(true);
+        suggestPane.setVisible(!suggestPane.isVisible());
     }
 
     public void onActionExchange() {
