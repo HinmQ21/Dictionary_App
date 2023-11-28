@@ -94,7 +94,6 @@ public class GameHangMan {
     }
 
     public String letterMatch(char letterClick) {
-        System.out.println(letterClick);
         String newWord = "";
         boolean check = true;
         for (int i=0; i <randomWord.length();i++) {
