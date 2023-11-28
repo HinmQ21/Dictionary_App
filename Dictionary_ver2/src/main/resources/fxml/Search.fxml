@@ -265,9 +265,9 @@
                                           <Font name="Calibri Bold" size="18.0" />
                                        </font>
                                     </Label>
-                                    <Label fx:id="wordOfDay" layoutX="127.0" layoutY="93.0" prefHeight="30.0" prefWidth="127.0" text="Label" textFill="WHITE">
+                                    <Label fx:id="wordOfDay" alignment="CENTER" layoutX="99.0" layoutY="93.0" prefHeight="30.0" prefWidth="155.0" text="Label" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                                        <font>
-                                          <Font name="Lucida Sans Demibold Italic" size="18.0" />
+                                          <Font name="Lucida Sans Demibold Italic" size="24.0" />
                                        </font>
                                     </Label>
                                     <Button layoutX="213.0" layoutY="118.0" mnemonicParsing="false" onAction="#onActionGo" prefHeight="26.0" prefWidth="38.0" styleClass="transparent" stylesheets="@../Ultis/value/styles.css">
