@@ -120,7 +120,7 @@ public class SearchController implements Initializable {
 
     public void onActionDelete() {
         Word selectedWord = listWord.getSelectionModel().getSelectedItem();
-        if (selectedWord != null || suggestPane.isVisible()) {
+        if (selectedWord != null || searchField.getText().equals(chosenWord.getWord_target())) {
             deleteConfirmation.setVisible(true);
         }
     }
@@ -129,7 +129,7 @@ public class SearchController implements Initializable {
         Word selectedWord = listWord.getSelectionModel().getSelectedItem();
         String word = selectedWord.getWord_target();
 
-        if (suggestPane.isVisible()) {
+        if (searchField.getText().equals(chosenWord.getWord_target())) {
             word = chosenWord.getWord_target();
         }
 
@@ -146,7 +146,7 @@ public class SearchController implements Initializable {
     public void onActionUpdate() {
         Word selectedWord = listWord.getSelectionModel().getSelectedItem();
 
-        if (selectedWord != null || suggestPane.isVisible()) {
+        if (selectedWord != null || searchField.getText().equals(chosenWord.getWord_target())) {
             updateWindow.setVisible(true);
         }
     }
@@ -161,7 +161,7 @@ public class SearchController implements Initializable {
         if (!new_def.isEmpty()) {
             Word selectedWord = listWord.getSelectionModel().getSelectedItem();
 
-            if (suggestPane.isVisible()) {
+            if (searchField.getText().equals(chosenWord.getWord_target())) {
                 selectedWord = chosenWord;
             }
             DictionaryManagement.dbUpdate(selectedWord.getWord_target(), new_def, curTable);
@@ -177,7 +177,7 @@ public class SearchController implements Initializable {
         try {
             Word selectedWord = listWord.getSelectionModel().getSelectedItem();
 
-            if (suggestPane.isVisible()) {
+            if (searchField.getText().equals(chosenWord.getWord_target())) {
                 selectedWord = chosenWord;
             }
 
