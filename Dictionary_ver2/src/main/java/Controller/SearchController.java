@@ -127,7 +127,7 @@ public class SearchController implements Initializable {
 
     public void onActionDelete() {
         Word selectedWord = listWord.getSelectionModel().getSelectedItem();
-        if (selectedWord != null) {
+        if (selectedWord != null || suggestPane.isVisible()) {
             deleteConfirmation.setVisible(true);
         }
     }
@@ -135,6 +135,11 @@ public class SearchController implements Initializable {
     public void onActionDeleteConfirmation() {
         Word selectedWord = listWord.getSelectionModel().getSelectedItem();
         String word = selectedWord.getWord_target();
+
+        if (suggestPane.isVisible()) {
+            word = chosenWord.getWord_target();
+        }
+
         if (selectedWord != null) {
             DictionaryManagement.dbDelete(word, curTable);
             deleteConfirmation.setVisible(false);
@@ -148,7 +153,7 @@ public class SearchController implements Initializable {
     public void onActionUpdate() {
         Word selectedWord = listWord.getSelectionModel().getSelectedItem();
 
-        if (selectedWord != null) {
+        if (selectedWord != null || suggestPane.isVisible()) {
             updateWindow.setVisible(true);
         }
     }
@@ -162,6 +167,10 @@ public class SearchController implements Initializable {
 
         if (!new_def.isEmpty()) {
             Word selectedWord = listWord.getSelectionModel().getSelectedItem();
+
+            if (suggestPane.isVisible()) {
+                selectedWord = chosenWord;
+            }
             DictionaryManagement.dbUpdate(selectedWord.getWord_target(), new_def, curTable);
 
             updateWindow.setVisible(false);
@@ -174,6 +183,11 @@ public class SearchController implements Initializable {
         String langCode = "";
         try {
             Word selectedWord = listWord.getSelectionModel().getSelectedItem();
+
+            if (suggestPane.isVisible()) {
+                selectedWord = chosenWord;
+            }
+
             if (curTable.equals("av")) langCode = "en-us";
             else langCode = "vi-vn";
             DictionaryManagement.TextToSpeech(selectedWord.getWord_target(), "hl=" + langCode);
