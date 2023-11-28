@@ -17,4 +17,5 @@ Trần Hậu Nam
 2. Mở project trong IDE (ở đây mình dùng IntelliJ)
 3. Trước khi dạy chương trình cần set JDK && add VM Option :\
 `--module-path "path to javafx lib folder" --add-modules javafx.controls,javafx.fxml,javafx.web`
-## Demo :
+## Review :
+[Review Form](https://docs.google.com/document/d/1PXjwgVW4csC7a88MolkNKBUdeXNV47T1NXQexn9P87c/edit?usp=sharing)
