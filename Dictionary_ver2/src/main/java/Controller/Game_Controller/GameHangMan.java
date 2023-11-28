@@ -110,9 +110,6 @@ public class GameHangMan {
             hangManLives--;
         }
         secretWord = newWord.toCharArray();
-        System.out.println(randomWord);
-        System.out.println(newWord);
-        System.out.println(secretWord);
         return newWord;
     }
 }

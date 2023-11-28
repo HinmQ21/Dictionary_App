@@ -2,6 +2,7 @@ package Controller;
 
 import DictionaryComandLine.DictionaryManagement;
 import DictionaryComandLine.Word;
+import javafx.animation.FadeTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -12,6 +13,7 @@ import javafx.scene.image.ImageView;
 
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.util.Duration;
 
 import java.net.URL;
 import java.time.LocalDate;
@@ -84,6 +86,13 @@ public class SearchController implements Initializable {
         searchField.setText(chosenWord.getWord_target());
         listWord.setItems(null);
         definitionArea.getEngine().loadContent(chosenWord.getWord_explain());
+
+        FadeTransition fadeTransition = new FadeTransition(Duration.millis(1000), suggestPane);
+        fadeTransition.setFromValue(1.0);
+        fadeTransition.setToValue(0.0);
+        fadeTransition.play();
+
+        suggestPane.setDisable(true);
     }
 
     public void onActionExchange() {

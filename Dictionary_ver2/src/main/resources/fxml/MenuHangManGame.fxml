@@ -13,7 +13,7 @@
          <children>
             <ImageView fitHeight="597.0" fitWidth="780.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Ultis/images/quiz_background.jpg" />
+                  <Image url="@../Ultis/images/bg_hangman.jpg" />
                </image>
             </ImageView>
             <Button fx:id="animals" layoutX="116.0" layoutY="60.0" mnemonicParsing="false" onAction="#onActionChooseGenre" prefHeight="58.0" prefWidth="120.0" styleClass="button_menu_hangman" stylesheets="@../Ultis/value/styles.css" text="Animals">

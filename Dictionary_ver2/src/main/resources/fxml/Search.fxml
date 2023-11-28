@@ -270,7 +270,7 @@
                                           <Font name="Lucida Sans Demibold Italic" size="18.0" />
                                        </font>
                                     </Label>
-                                    <Button layoutX="213.0" layoutY="118.0" mnemonicParsing="false" onAction="#onActionGo" prefHeight="26.0" prefWidth="38.0" styleClass="transparent" stylesheets="@../Ultis/value/styles.css">
+                                    <Button fx:id="go" layoutX="213.0" layoutY="118.0" mnemonicParsing="false" onAction="#onActionGo" prefHeight="26.0" prefWidth="38.0" styleClass="transparent" stylesheets="@../Ultis/value/styles.css">
                                        <graphic>
                                           <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
